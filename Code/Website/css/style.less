@@ -1,0 +1,97 @@
+@import 'palette.less';
+@import 'library.less';
+
+body {
+    font-family: "Libre Franklin", sans-serif;
+}
+
+nav {
+    background-color: @lessDarkColor;
+    font-weight: bold;
+    text-transform: uppercase;
+    ul {
+        li {
+            display: inline-block;
+            margin-right: -4px;
+            a {
+                display: inline-block;
+                padding: 2em;
+                text-decoration: none;
+                &:visited,
+                &:link {
+                    color: @lightColor;
+                }
+                &:hover {
+                    background-color: @color4;
+                }
+            }
+        }
+    }
+}
+
+header {
+    background-image: url(../images/background.jpeg);
+    background-position: center center;
+    background-size: cover;
+    height: 400px;
+    padding: 2em;
+    h1 {
+        .headingFont(@headingFont; 3.5em);
+        background-color: @lightColor;
+        display: inline;
+    }
+}
+
+main {
+    padding: 2em;
+    h2 {
+        .headingFont(@headingFont; 1.7em);
+    }
+    h3 {
+        .headingFont(@headingFont; 1.5em);
+    }
+    h4 {
+        .headingFont(@headingFont; 1.3em);
+    }
+    h5 {
+        .headingFont(@headingFont; 1.1em);
+    }
+    h6 {
+        .headingFont(@headingFont; 1em);
+    }
+    p, li {
+        .textSize(1.25em);
+    }
+    span {
+        font-weight: bold;
+    }
+}
+
+footer {
+    background-color: @color5;
+    color: @lightColor;
+    padding: 2em;
+    h2 {
+        .headingFont(@headingFont; 1.5em);
+    }
+    h3 {
+        .headingFont(@headingFont; 1.2em);
+    }
+    h4 {
+        .headingFont(@headingFont; 1.1em);
+    }
+    h5 {
+        .headingFont(@headingFont; 1em);
+    }
+    h6 {
+        .headingFont(@headingFont; .9em);
+    }
+    p, li {
+        .textSize(.8em);
+    }
+}
+
+// If you are good with LESS, you have a clue what's coming up in another module here
+.current() {
+    background-color: @color2;
+}
