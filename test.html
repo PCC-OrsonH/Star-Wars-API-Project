@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+
+<head>
+    <script>
+        let xhr = new XMLHttpRequest(); // XML Request
+        xhr.open("GET", "https://swapi.co/api/films/", false); // Requesting all the pokemon in the database
+        xhr.send(); // sending the request
+        console.log(xhr.status); // Logging the status of the request
+        let bpiObject = JSON.parse(xhr.responseText); // Declaring a variable for the JSON object
+        console.log(bpiObject);
+    </script>
+</head>
+
+</html>
