@@ -1,4 +1,4 @@
-@rem This script pushes master branch to our website
+@rem This script pushes the master branch to our website
 @rem
 @rem OrsonH
 @rem __________________________________________________________________________
