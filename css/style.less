@@ -1,26 +1,253 @@
-/* style.less
-
-Project:
-Programmer:
-Date:
-
-*/
-
 @import 'palette.less';
-@import 'mixins.less';
 
-/* mobile styles */
+body {
+	font: 300 normal 16px 'Houschka Rounded', Arial, sans-serif;
+}
 
-body{}
+h1, h2, h3, h4, h5, h6 {
+	color: @primaryColor;
+	font: 700 normal 16px 'Futura PT', sans-serif;
+	text-transform: uppercase;
+}
 
-header{}
+h2 {
+	font-size: 2.5em;
+	margin-bottom: 1em;
+	margin-left: .5em;
+}
 
-nav{}
+h3 {
+	font-size: 1.3em;
+}
 
-footer{}
+.row {
+	margin-left: 0;
+	margin-right: 0;
+} // .row
 
-/* Tablet Styles */
-@media only screen and (min-width: 481px){}
+header {
+	min-height: 600px;
 
-/* Desktop Styles */
-@media only screen and (min-width: 1025px) {}
+	.header-text {
+		text-align: center;
+		transform: translateY(80%);
+
+		img {
+			margin: 2em auto;
+			width: 50%;
+		}
+
+		input, select, button {
+			border: 1px solid @primaryColor;
+			border-radius: 10%%;
+			padding: .5em;
+		}
+
+		button {
+			background-color: @primaryColor;
+			color: @lightColor;
+		}
+	}
+
+}
+
+#home header {
+	background: url(../images/force-awakens_wallpaper_004.jpg) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#characters header {
+	background: url(../images/characters.jpg) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#films header {
+	background: url(../images/films.jpeg) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#species header {
+	background: url(../images/cantina.jpg) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#planets header {
+	background: url(../images/death-star.jpg) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#planets header {
+	background: url(../images/spaceships.jpg) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#characters, #films, #planets, #species, #starships, #vehicles {
+
+	section:first-of-type {
+
+		padding: 4em 2em;
+
+		h2 {
+			margin-left: 0;
+			text-align: center;
+		}
+
+		p {
+			margin-bottom: 2em;
+		}
+
+		div:nth-of-type(2) {
+
+			margin-top: 2em;
+
+			aside {
+				border-top: .3px solid @primaryColor;
+				padding: 1em;
+
+				&:nth-of-type(1), &:nth-of-type(3) {
+					border-right: .3px solid @primaryColor;
+				}
+
+				&:nth-of-type(3), &:nth-of-type(4) {
+					border-bottom: .3px solid @primaryColor;
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+
+section {
+	padding: 3em 1em;
+
+	img { 
+		margin-bottom: 2em;
+	}
+
+}
+
+footer {
+	background: url(../images/red-bg.jpg) no-repeat;
+	background-size: cover;
+	min-height: 300px;
+	padding: 5em 2em;
+	text-align: center;
+
+	h2 {
+		color: @lightColor;
+		margin-bottom: .5em;
+	}
+
+	ul {
+		display: inline-block;
+
+
+		li {
+			display: inline;
+		}
+
+	} // ul
+
+
+	.fa {
+		color: @lightColor;
+		font-size: 1.5em;
+		padding: .60em .75em;
+		transition: all 0.4s;
+
+
+		&:hover {
+			color: @secondaryColor;
+		}
+
+	} // .fa
+
+}
+
+@media screen and (min-width:600px) {
+
+	header {
+
+		.header-text {
+
+			img {
+				width: 40%;
+			}
+
+		}
+
+	}
+
+	#characters, #films, #planets, #species, #starships, #vehicles {
+		section:first-of-type>p { 
+			padding: 1em;
+		}
+
+		section:first-of-type {
+			h2 {
+				text-align: left;
+			}
+
+		}
+
+	}
+
+}
+
+@media screen and (min-width:1000px) {
+
+	header {
+
+		min-height: 700px;
+
+		.header-text {
+
+			transform: translateY(60%);
+
+			img {
+				width: 35%;
+			}
+
+		}
+
+	}
+
+	#characters, #films, #planets, #species, #starships, #vehicles {
+		section:first-of-type>div { 
+			padding: 1em 7em 1em 5em;
+		}
+
+		section:first-of-type {
+			
+			padding: 4em;
+
+			div:nth-of-type(2) aside {
+				border: 0;
+				border-right: .3px solid @primaryColor;
+				padding: 1em;
+
+				&:last-of-type {
+					border-right: 0;
+				}
+
+				&:nth-of-type(3), &:nth-of-type(4) {
+					border-bottom: 0;
+				}
+
+			}
+
+		}
+		
+	}
+
+}
