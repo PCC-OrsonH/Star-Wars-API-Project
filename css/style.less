@@ -87,6 +87,89 @@ header {
 	background-size: cover;
 }
 
+section.movies-section div div {
+	min-height: 400px;
+	margin-left: 2.5%;
+	width: 45%;
+}
+
+section.movies-section div.row {
+	padding-left: 2em;
+}
+
+section.characters ul {
+	
+	text-align: center;
+	
+	a {
+		text-decoration: none;
+		transition: all 0.4s;
+		 
+		&:hover {
+			background-color: @primaryColor;
+			color: @lightColor;
+		}
+		
+	}
+
+	li {
+		border: 1px solid @primaryColor;
+		display: inline-block;
+		padding: 1em;
+		margin: .5em;
+	}
+}
+
+.episode1 {
+	background: url(../images/phantom-menace.jpg) no-repeat;
+	background-size: contain;
+}
+
+.episode2 {
+	background: url(../images/attack-of-the-clones.jpg) no-repeat;
+	background-size: contain;
+}
+
+.episode3 {
+	background: url(../images/revenge-of-the-sith.jpg) no-repeat;
+	background-size: contain;
+}
+
+.episode4 {
+	background: url(../images/a-new-hope.jpg) no-repeat;
+	background-size: contain;
+}
+
+.episode5 {
+	background: url(../images/empire-strikes-back.jpg) no-repeat;
+	background-size: contain;
+}
+
+.episode6 {
+	background: url(../images/return-of-the-jedi.jpg) no-repeat;
+	background-size: contain;
+}
+
+.episode7 {
+	background: url(../images/force-awakens-poster.jpg) no-repeat;
+	background-size: contain;
+}
+
+.episode8 {
+	background: url(../images/last-jedi.jpg) no-repeat;
+	background-size: contain;
+}
+
+.episode9 {
+	background: url(../images/rogue8_final_screen.jpg) no-repeat;
+	background-size: contain;
+}
+
+.episode10 {
+	background: url(../images/solonewposter.jpg) no-repeat;
+	background-size: contain;
+}
+
 #characters, #films, #planets, #species, #starships, #vehicles {
 
 	section:first-of-type {
@@ -188,6 +271,12 @@ footer {
 
 	}
 
+	section.movies-section div div {
+		min-height: 400px;
+		margin-left: 2.5%;
+		margin-bottom: 2em;
+	}
+
 	#characters, #films, #planets, #species, #starships, #vehicles {
 		section:first-of-type>p { 
 			padding: 1em;
@@ -222,13 +311,20 @@ footer {
 
 	}
 
+	section.movies-section div div {
+		min-height: 400px;
+		margin-left: 2.5%;
+		margin-bottom: 2em;
+		width: 30%;
+	}
+
 	#characters, #films, #planets, #species, #starships, #vehicles {
 		section:first-of-type>div { 
 			padding: 1em 7em 1em 5em;
 		}
 
 		section:first-of-type {
-			
+
 			padding: 4em;
 
 			div:nth-of-type(2) aside {
@@ -247,7 +343,7 @@ footer {
 			}
 
 		}
-		
+
 	}
 
 }
