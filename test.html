@@ -3,12 +3,15 @@
 
 <head>
     <script>
-        let xhr = new XMLHttpRequest(); // XML Request
-        xhr.open("GET", "https://swapi.co/api/people/name/Luke Skywalker", false); // Requesting all the pokemon in the database
-        xhr.send(); // sending the request
-        console.log(xhr.status); // Logging the status of the request
-        let bpiObject = JSON.parse(xhr.responseText); // Declaring a variable for the JSON object
-        console.log(bpiObject);
+        for (let i = 0; i < 100; i++) {
+            let xhr = new XMLHttpRequest(); // XML Request
+            xhr.open("GET", "https://swapi.co/api/people/" + i + "/", false); // Requesting all the pokemon in the database
+            xhr.send(); // sending the request
+            console.log(xhr.status); // Logging the status of the request
+            let bpiObject = JSON.parse(xhr.responseText); // Declaring a variable for the JSON object
+            console.log(bpiObject);
+        }
+
     </script>
 </head>
 
