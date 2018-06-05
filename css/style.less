@@ -97,6 +97,29 @@ section.movies-section div.row {
 	padding-left: 2em;
 }
 
+section.characters ul {
+	
+	text-align: center;
+	
+	a {
+		text-decoration: none;
+		transition: all 0.4s;
+		 
+		&:hover {
+			background-color: @primaryColor;
+			color: @lightColor;
+		}
+		
+	}
+
+	li {
+		border: 1px solid @primaryColor;
+		display: inline-block;
+		padding: 1em;
+		margin: .5em;
+	}
+}
+
 .episode1 {
 	background: url(../images/phantom-menace.jpg) no-repeat;
 	background-size: contain;
@@ -247,7 +270,7 @@ footer {
 		}
 
 	}
-	
+
 	section.movies-section div div {
 		min-height: 400px;
 		margin-left: 2.5%;
@@ -287,7 +310,7 @@ footer {
 		}
 
 	}
-	
+
 	section.movies-section div div {
 		min-height: 400px;
 		margin-left: 2.5%;
@@ -301,7 +324,7 @@ footer {
 		}
 
 		section:first-of-type {
-			
+
 			padding: 4em;
 
 			div:nth-of-type(2) aside {
@@ -320,7 +343,7 @@ footer {
 			}
 
 		}
-		
+
 	}
 
 }
