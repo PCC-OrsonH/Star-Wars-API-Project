@@ -15,6 +15,7 @@ function searching(value, type) {
     firstObject = JSON.parse(xhr.responseText); // Declaring a variable for the JSON object
     let i;
     let url;
+    value = value.charAt(0).toUpperCase() + value.slice(1);
     for (i = 0; i < firstObject.results.length; i++) {
         if (firstObject.results[i].name == value) {
             url = firstObject.results[i].url;
@@ -43,7 +44,7 @@ function searching(value, type) {
         }
     } else {
         if (i == firstObject.results.length && firstObject.next != null) {
-            callingAPI(value, type, Object.next);
+            callingAPI(value, type, firstObject.next);
         } else {
             badSearch(value, type);
         }
@@ -132,44 +133,55 @@ function badSearch(value, type) {
                 }
             }
             firstObject = badCall(firstObject.next);
-            if(firstObject.next == null){
+            if (firstObject.next == null) {
+                for (let i = 0; i < firstObject.results.length; i++) {
+                    if (firstLetter == firstObject.results[i].name.charAt(0)) {
+                        let listItem = document.createElement("li");
+                        let a = document.createElement("a");
+                        a.innerHTML = firstObject.results[i].name;
+                        let url = foundSomething(firstObject.results[i], type);
+                        a.setAttribute("href", url);
+                        listItem.appendChild(a);
+                        area.appendChild(listItem);
+                    }
+                }
                 break;
             }
         }
     }
 }
-    // Function for calling the API 
-    function badCall(search) {
-        let xhr = new XMLHttpRequest(); // XML Request
-        xhr.open("GET", search, false); // Requesting all the pokemon in the database
-        xhr.send(); // sending the request
-        firstObject = JSON.parse(xhr.responseText); // Declaring a variable for the JSON object
-        return firstObject;
-    }
-    // Function for clearing the Error Message and Suggestion List
-    function clearing() {
-        document.getElementById("errorMess").style.display = "none";
-        document.getElementById("suggList").style.display = "none";
-        document.getElementById("suggList").innerHTML = " ";
-        document.getElementsByClassName("well")[0].style.display = "none";
-    }
-    // Function for redirecting the suggested item, kill me please
-    function foundSomething(results, type) {
-        let c;
-        let d;
-        url = results.url;
-        for (let x = 0; x < url.length; x++) {
-            c = url.charAt(x);
-            if (!isNaN(parseInt(c, 10))) {
-                d = url.charAt(x + 1);
-                if (!isNaN(parseInt(d, 10))) {
-                    break;
-                } else if (d == "/") {
-                    d = " ";
-                    break;
-                }
+// Function for calling the API 
+function badCall(search) {
+    let xhr = new XMLHttpRequest(); // XML Request
+    xhr.open("GET", search, false); // Requesting all the pokemon in the database
+    xhr.send(); // sending the request
+    firstObject = JSON.parse(xhr.responseText); // Declaring a variable for the JSON object
+    return firstObject;
+}
+// Function for clearing the Error Message and Suggestion List
+function clearing() {
+    document.getElementById("errorMess").style.display = "none";
+    document.getElementById("suggList").style.display = "none";
+    document.getElementById("suggList").innerHTML = " ";
+    document.getElementsByClassName("well")[0].style.display = "none";
+}
+// Function for redirecting the suggested item, kill me please
+function foundSomething(results, type) {
+    let c;
+    let d;
+    url = results.url;
+    for (let x = 0; x < url.length; x++) {
+        c = url.charAt(x);
+        if (!isNaN(parseInt(c, 10))) {
+            d = url.charAt(x + 1);
+            if (!isNaN(parseInt(d, 10))) {
+                break;
+            } else if (d == "/") {
+                d = " ";
+                break;
             }
         }
-        let message = type + ".html?=" + c + d
-        return message;
     }
+    let message = type + ".html?=" + c + d
+    return message;
+}
