@@ -97,31 +97,80 @@ function badSearch(value, type) {
     let firstLetter = value.charAt(0);
 
     let area = document.getElementById("suggList");
+    area.innerHTML = " ";
     area.style.display = "block";
     let eMessage = document.getElementById("errorMess");
     eMessage.style.display = "block";
     eMessage.innerHTML = "Whoops! Can't seem to find that " + "<br>" + "Did you mean: ";
 
-    let xhr = new XMLHttpRequest(); // XML Request
-    xhr.open("GET", "https://swapi.co/api/" + type + "/", false); // Requesting all the pokemon in the database
-    xhr.send(); // sending the request
-    Object = JSON.parse(xhr.responseText); // Declaring a variable for the JSON object
+    let Object = badCall("https://swapi.co/api/" + type + "/");
     for (let i = 0; i < Object.results.length; i++) {
         if (firstLetter == Object.results[i].name.charAt(0)) {
             let listItem = document.createElement("li");
-            listItem.innerHTML = Object.results[i].name;
+            let a = document.createElement("a");
+            a.innerHTML = Object.results[i].name;
+            let url = foundSomething(Object.results[i], type);
+            a.setAttribute("href", url);
+            listItem.appendChild(a);
             area.appendChild(listItem);
         }
     }
-    let xhr2 = new XMLHttpRequest(); // XML Request
-    xhr2.open("GET", Object.next, false); // Requesting all the pokemon in the database
-    xhr2.send(); // sending the request
-    Object2 = JSON.parse(xhr2.responseText); // Declaring a variable for the JSON object
+    let Object2 = badCall(Object.next);
     for (let i = 0; i < Object2.results.length; i++) {
         if (firstLetter == Object2.results[i].name.charAt(0)) {
             let listItem = document.createElement("li");
-            listItem.innerHTML = Object2.results[i].name;
+            let a = document.createElement("a");
+            a.innerHTML = Object2.results[i].name;
+            let url = foundSomething(Object2.results[i], type);
+            a.setAttribute("href", url);
+            listItem.appendChild(a);
             area.appendChild(listItem);
         }
     }
+    let Object3 = badCall(Object2.next);
+    for (let i = 0; i < Object3.results.length; i++) {
+        if (firstLetter == Object3.results[i].name.charAt(0)) {
+            let listItem = document.createElement("li");
+            let a = document.createElement("a");
+            a.innerHTML = Object3.results[i].name;
+            let url = foundSomething(Object3.results[i], type);
+            a.setAttribute("href", url);
+            listItem.appendChild(a);
+            area.appendChild(listItem);
+        }
+    }
+}
+// Function for calling the API 
+function badCall(search) {
+    let xhr = new XMLHttpRequest(); // XML Request
+    xhr.open("GET", search, false); // Requesting all the pokemon in the database
+    xhr.send(); // sending the request
+    Object = JSON.parse(xhr.responseText); // Declaring a variable for the JSON object
+    return Object;
+}
+// Function for clearing the Error Message and Suggestion List
+function clearing() {
+    document.getElementById("errorMess").style.display = "none";
+    document.getElementById("suggList").style.display = "none";
+    document.getElementById("suggList").innerHTML = " ";
+}
+// Function for redirecting the suggested item, kill me please
+function foundSomething(results, type) {
+    let c;
+    let d;
+    url = results.url;
+    for (let x = 0; x < url.length; x++) {
+        c = url.charAt(x);
+        if (!isNaN(parseInt(c, 10))) {
+            d = url.charAt(x + 1);
+            if (!isNaN(parseInt(d, 10))) {
+                break;
+            } else if (d == "/") {
+                d = " ";
+                break;
+            }
+        }
+    }
+    let message = type + ".html?=" + c + d
+    return message;
 }
