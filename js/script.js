@@ -45,7 +45,7 @@ function searching(value, type) {
         if (i == Object.results.length && Object.next != null) {
             callingAPI(value, type, Object.next);
         } else {
-            badSearch(value);
+            badSearch(value, type);
         }
     }
 }
@@ -102,7 +102,7 @@ function badSearch(value, type) {
     let eMessage = document.getElementById("errorMess");
     eMessage.style.display = "block";
     eMessage.innerHTML = "Whoops! Can't seem to find that " + "<br>" + "Did you mean: ";
-
+    document.getElementsByClassName("well")[0].style.display = "block";
     let Object = badCall("https://swapi.co/api/" + type + "/");
     for (let i = 0; i < Object.results.length; i++) {
         if (firstLetter == Object.results[i].name.charAt(0)) {
@@ -115,28 +115,33 @@ function badSearch(value, type) {
             area.appendChild(listItem);
         }
     }
-    let Object2 = badCall(Object.next);
-    for (let i = 0; i < Object2.results.length; i++) {
-        if (firstLetter == Object2.results[i].name.charAt(0)) {
-            let listItem = document.createElement("li");
-            let a = document.createElement("a");
-            a.innerHTML = Object2.results[i].name;
-            let url = foundSomething(Object2.results[i], type);
-            a.setAttribute("href", url);
-            listItem.appendChild(a);
-            area.appendChild(listItem);
+    let Object2;
+    if (Object.hasOwnProperty("next")) {
+        Object2 = badCall(Object.next);
+        for (let i = 0; i < Object2.results.length; i++) {
+            if (firstLetter == Object2.results[i].name.charAt(0)) {
+                let listItem = document.createElement("li");
+                let a = document.createElement("a");
+                a.innerHTML = Object2.results[i].name;
+                let url = foundSomething(Object2.results[i], type);
+                a.setAttribute("href", url);
+                listItem.appendChild(a);
+                area.appendChild(listItem);
+            }
         }
     }
-    let Object3 = badCall(Object2.next);
-    for (let i = 0; i < Object3.results.length; i++) {
-        if (firstLetter == Object3.results[i].name.charAt(0)) {
-            let listItem = document.createElement("li");
-            let a = document.createElement("a");
-            a.innerHTML = Object3.results[i].name;
-            let url = foundSomething(Object3.results[i], type);
-            a.setAttribute("href", url);
-            listItem.appendChild(a);
-            area.appendChild(listItem);
+    if (Object2.hasOwnProperty("next")) {
+        let Object3 = badCall(Object2.next);
+        for (let i = 0; i < Object3.results.length; i++) {
+            if (firstLetter == Object3.results[i].name.charAt(0)) {
+                let listItem = document.createElement("li");
+                let a = document.createElement("a");
+                a.innerHTML = Object3.results[i].name;
+                let url = foundSomething(Object3.results[i], type);
+                a.setAttribute("href", url);
+                listItem.appendChild(a);
+                area.appendChild(listItem);
+            }
         }
     }
 }
@@ -153,6 +158,7 @@ function clearing() {
     document.getElementById("errorMess").style.display = "none";
     document.getElementById("suggList").style.display = "none";
     document.getElementById("suggList").innerHTML = " ";
+    document.getElementsByClassName("well")[0].style.display = "none";
 }
 // Function for redirecting the suggested item, kill me please
 function foundSomething(results, type) {

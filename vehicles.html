@@ -34,9 +34,8 @@
     <header>
         <div class="header-text">
             <img src="images/logo.png">
-
             <div>
-                <input id="search" type="text" placeholder="Search here..">
+                <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
                 <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
                 <select>
 						<option value="planets">Planets</option>
@@ -49,8 +48,11 @@
                 <button type="submit" onclick="getSearch();">Search</button>
 
             </div>
+            <div class="well" style="display: none;">
+                <h3 id="errorMess" display="none"></h3>
+                <ul id="suggList" display="none"></ul>
+            </div>
         </div>
-
 
     </header>
 
