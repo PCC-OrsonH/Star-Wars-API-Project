@@ -76,12 +76,14 @@ header .header-text button {
   background-attachment: fixed;
   background-size: cover;
 }
-section.movies-section div div {
+section.movies-section div div,
+section.characters-section div div {
   min-height: 400px;
   margin-left: 2.5%;
   width: 45%;
 }
-section.movies-section div.row {
+section.movies-section div.row,
+section.characters-section div.row {
   padding-left: 2em;
 }
 section.characters ul {
@@ -139,6 +141,42 @@ section.characters ul li {
 }
 .episode10 {
   background: url(../images/solonewposter.jpg) no-repeat;
+  background-size: contain;
+}
+.luke {
+  background: url(../images/luke.jpg) no-repeat;
+  background-size: contain;
+}
+.vader {
+  background: url(../images/vader.jpg) no-repeat;
+  background-size: contain;
+}
+.leia {
+  background: url(../images/leia.jpg) no-repeat;
+  background-size: contain;
+}
+.han {
+  background: url(../images/han.jpg) no-repeat;
+  background-size: contain;
+}
+.yoda {
+  background: url(../images/yoda.jpg) no-repeat;
+  background-size: contain;
+}
+.obi {
+  background: url(../images/obi.jpg) no-repeat;
+  background-size: contain;
+}
+.rey {
+  background: url(../images/rey.jpg) no-repeat;
+  background-size: contain;
+}
+.ren {
+  background: url(../images/ren.jpg) no-repeat;
+  background-size: contain;
+}
+.palpatine {
+  background: url(../images/palpatine.jpg) no-repeat;
   background-size: contain;
 }
 #characters section:first-of-type,
@@ -247,7 +285,8 @@ footer .fa:hover {
   header .header-text img {
     width: 40%;
   }
-  section.movies-section div div {
+  section.movies-section div div,
+  section.characters-section div div {
     min-height: 400px;
     margin-left: 2.5%;
     margin-bottom: 2em;
@@ -279,7 +318,8 @@ footer .fa:hover {
   header .header-text img {
     width: 35%;
   }
-  section.movies-section div div {
+  section.movies-section div div,
+  section.characters-section div div {
     min-height: 400px;
     margin-left: 2.5%;
     margin-bottom: 2em;
