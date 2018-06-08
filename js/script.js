@@ -1,6 +1,6 @@
 // Class for storing the searches, this API seriously so bad i have to use OOP to make it faster : )
 class Result {
-    /* Constructor */ 
+    /* Constructor */
     constructor(stuff) {
         this.thing = stuff;
     }
@@ -10,19 +10,6 @@ class Result {
         return this.thing;
     }
 }
-
-// Function for calling the API 
-function callingAPI(search) {
-    /* Variables */
-    let firstObject;
-
-    /* XML Request */
-    let xhr = new XMLHttpRequest(); // XML Request
-    xhr.open("GET", search, false); // Requesting all the pokemon in the database
-    xhr.send(); // sending the request
-    firstObject = JSON.parse(xhr.responseText); // Declaring a variable for the JSON object
-    return firstObject;
-}
 // Function for calling the API and storing the results
 function thisAPISux(type) {
     /* Variables */
@@ -31,25 +18,35 @@ function thisAPISux(type) {
     let x = 0;
 
     /* Storing the first Object */
-    firstObject = callingAPI("https://swapi.co/api/" + type + "/");
-    thing[x] = new Result(firstObject);
-
-    x++; // Moving the counter
+    callingAPI("https://swapi.co/api/" + type + "/");
 
     /* Storing the rest of the objects */
-    if (firstObject.next != null) {
-        while (true) {
-            firstObject = callingAPI(firstObject.next);
-            if (firstObject.next == null) {
-                thing[x] = new Result(firstObject);
-                break;
-            } else {
-                thing[x] = new Result(firstObject);
-                x++;
+    function checking(foundObject) {
+        if (foundObject.next == null) {
+            thing[x] = new Result(foundObject);
+            searching(thing, type); // Searching for the search value
+        } else {
+            thing[x] = new Result(foundObject);
+            x++;
+            callingAPI(foundObject.next);
+        }
+    }
+    // Function for calling the API 
+    function callingAPI(search) {
+        /* Variables */
+        let foundObject
+
+        /* XML Request */
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", search, true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (this.readyState === this.DONE) {
+                foundObject = JSON.parse(xhr.responseText);
+                checking(foundObject);
             }
         }
     }
-    searching(thing, type); // Searching for the search value
 }
 // Function for getting the user search
 function getSearch() {
@@ -86,7 +83,7 @@ function searching(thing, type) {
                 }
             }
         }
-        if(x < thing[i].thing.results.length){
+        if (x < thing[i].thing.results.length) {
             break;
         }
     }
