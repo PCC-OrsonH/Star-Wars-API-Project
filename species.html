@@ -1,128 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="author" content="CHANGE-ME">
-		<meta name="description" content="CHANGE-ME">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="CHANGE-ME">
+    <meta name="description" content="CHANGE-ME">
 
-		<!-- HTML Shiv -->
+    <!-- HTML Shiv -->
 
-		<!--[if lt IE 9]>
+    <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
 </script>
 <![endif]-->
 
-		<!-- Mobile Stuff -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Mobile Stuff -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- Font Stuff -->
+    <!-- Font Stuff -->
 
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.typekit.net/kai5rdv.css">
-		<!-- CSS Stuff -->
-		<link href="css/reset.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/kai5rdv.css">
+    <!-- CSS Stuff -->
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
-		<title>Species | CAS 265 SWAPI</title>
+    <script src="js/script.js"></script>
+    <title>Species | CAS 265 SWAPI</title>
 
-	</head>
+</head>
 
-	<body id = "species">
+<body id="species">
 
-		<header>
-			<div class="header-text">
-				<img src="images/logo.png">
-
-				<div>
-					<input id="search" type="text" placeholder="Search here....">
-					<!--					Planets, Spaceships, Vehicles, People, Films and Species -->
-					<select>
+    <header>
+        <div class="header-text">
+            <img src="images/logo.png">
+            <div>
+                <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
+                <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
+                <select>
 						<option value="planets">Planets</option>
 						<option value="films">Films</option>
 						<option value="people">Characters</option>
-						<option value="spaceships">Spaceships</option>
+						<option value="starships">Spaceships</option>
 						<option value="vehicles">Vehicles</option>
 						<option value="species">Species</option>
 					</select>
-					<button type="submit">Search</button>
+                <button type="submit" onclick="getSearch();">Search</button>
 
-				</div>
-			</div>
+            </div>
+            <div class="well" style="display: none;">
+                <h3 id="errorMess" display="none"></h3>
+                <ul id="suggList" display="none"></ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="row">
+
+            <img class="col-xs-12 col-sm-6 col-md-4" src="images/soldier.jpg">
+
+            <div class="col-xs-12 col-sm-6 col-md-8">
+
+                <h2>Human</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor orci ut magna vehicula, quis scelerisque leo tincidunt. Phasellus fringilla condimentum enim non convallis. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 
 
-		</header>
 
-		<main>
+            </div>
 
-			<section class="row">
+            <div class="row col-xs-12 col-sm-12 col-md-12">
 
-				<img class="col-xs-12 col-sm-6 col-md-4" src="images/soldier.jpg">
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Classification</h3>
+                    <p>Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Home World</h3>
+                    <p>lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Language</h3>
+                    <p>Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Average Lifespan</h3>
+                    <p>Lorem Ipsum</p>
+                </aside>
 
-				<div class="col-xs-12 col-sm-6 col-md-8">
+            </div>
 
-					<h2>Human</h2>
+        </section>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor orci ut magna vehicula, quis scelerisque leo tincidunt. Phasellus fringilla condimentum enim non convallis. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <section class="movies-section">
+            <h2>Movies</h2>
 
+            <div class="row">
 
+                <div class="col-xs-6 col-sm-6 col-md-4 episode1"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode2"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode3"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode4"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode5"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode6"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode7"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode8"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode9"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode10"></div>
 
-				</div>
+            </div>
+        </section>
+    </main>
 
-				<div class="row col-xs-12 col-sm-12 col-md-12">
+    <footer>
+        <h2>Follow Star Wars</h2>
+        <div>
+            <ul>
+                <li><a href="https://www.facebook.com/StarWars"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/starwars/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/starwars/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.tumblr.com/search/star%20wars" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/starwars" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </footer>
 
-					<aside class="col-xs-6 col-sm-6 col-md-3">
-						<h3>Classification</h3>
-						<p>Lorem Ipsum</p>
-					</aside>
-					<aside class="col-xs-6 col-sm-6 col-md-3">
-						<h3>Home World</h3>
-						<p>lorem Ipsum</p>
-					</aside>
-					<aside class="col-xs-6 col-sm-6 col-md-3">
-						<h3>Language</h3>
-						<p>Lorem Ipsum</p>
-					</aside>
-					<aside class="col-xs-6 col-sm-6 col-md-3">
-						<h3>Average Lifespan</h3>
-						<p>Lorem Ipsum</p>
-					</aside>
-
-				</div>
-
-			</section>
-
-			<section>
-				<h2>Movies</h2>
-
-				<div class="row">
-
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-				</div>
-			</section>
-		</main>
-
-		<footer>
-			<h2>Follow Star Wars</h2>
-			<div>
-				<ul>
-					<li><a href="https://www.facebook.com/StarWars"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="https://www.instagram.com/starwars/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					<li><a href="https://twitter.com/starwars/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					<li><a href="https://www.tumblr.com/search/star%20wars" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
-					<li><a href="https://www.youtube.com/starwars" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-				</ul>
-			</div>
-		</footer>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://use.fontawesome.com/3aaa070cfc.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-	</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/3aaa070cfc.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
 
 </html>

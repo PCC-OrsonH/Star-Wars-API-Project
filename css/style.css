@@ -76,6 +76,71 @@ header .header-text button {
   background-attachment: fixed;
   background-size: cover;
 }
+section.movies-section div div {
+  min-height: 400px;
+  margin-left: 2.5%;
+  width: 45%;
+}
+section.movies-section div.row {
+  padding-left: 2em;
+}
+section.characters ul {
+  text-align: center;
+}
+section.characters ul a {
+  text-decoration: none;
+  transition: all 0.4s;
+}
+section.characters ul a:hover {
+  background-color: #416d8b;
+  color: #ffffff;
+}
+section.characters ul li {
+  border: 1px solid #416d8b;
+  display: inline-block;
+  padding: 1em;
+  margin: .5em;
+}
+.episode1 {
+  background: url(../images/phantom-menace.jpg) no-repeat;
+  background-size: contain;
+}
+.episode2 {
+  background: url(../images/attack-of-the-clones.jpg) no-repeat;
+  background-size: contain;
+}
+.episode3 {
+  background: url(../images/revenge-of-the-sith.jpg) no-repeat;
+  background-size: contain;
+}
+.episode4 {
+  background: url(../images/a-new-hope.jpg) no-repeat;
+  background-size: contain;
+}
+.episode5 {
+  background: url(../images/empire-strikes-back.jpg) no-repeat;
+  background-size: contain;
+}
+.episode6 {
+  background: url(../images/return-of-the-jedi.jpg) no-repeat;
+  background-size: contain;
+}
+.episode7 {
+  background: url(../images/force-awakens-poster.jpg) no-repeat;
+  background-size: contain;
+}
+.episode8 {
+  background: url(../images/last-jedi.jpg) no-repeat;
+  background-size: contain;
+}
+.episode9 {
+  background: url(../images/rogue8_final_screen.jpg) no-repeat;
+  background-size: contain;
+}
+.episode10 {
+  background: url(../images/solonewposter.jpg) no-repeat;
+  background-size: contain;
+}
 #characters section:first-of-type,
 #films section:first-of-type,
 #planets section:first-of-type,
@@ -182,6 +247,11 @@ footer .fa:hover {
   header .header-text img {
     width: 40%;
   }
+  section.movies-section div div {
+    min-height: 400px;
+    margin-left: 2.5%;
+    margin-bottom: 2em;
+  }
   #characters section:first-of-type > p,
   #films section:first-of-type > p,
   #planets section:first-of-type > p,
@@ -208,6 +278,12 @@ footer .fa:hover {
   }
   header .header-text img {
     width: 35%;
+  }
+  section.movies-section div div {
+    min-height: 400px;
+    margin-left: 2.5%;
+    margin-bottom: 2em;
+    width: 30%;
   }
   #characters section:first-of-type > div,
   #films section:first-of-type > div,

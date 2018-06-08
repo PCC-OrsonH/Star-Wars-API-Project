@@ -22,9 +22,10 @@
 		<link rel="stylesheet" href="https://use.typekit.net/kai5rdv.css">
 		<!-- CSS Stuff -->
 		<link href="css/reset.css" rel="stylesheet">
-		<link href="css/grid.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 
+        <!-- JavaScript -->
+        <script src="js/script.js"></script>
 		<title>Star Wars Database</title>
 
 	</head>
@@ -34,21 +35,24 @@
 		<header>
 			<div class="header-text">
 				<img src="images/logo.png">
-
 				<div>
-					<input id="search" type="text" placeholder="Search here....">
+					<input id="search" type="text" placeholder="Search here.." onclick="clearing();">
 <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
 					<select>
 						<option value="planets">Planets</option>
 						<option value="films">Films</option>
 						<option value="people">Characters</option>
-						<option value="spaceships">Spaceships</option>
+						<option value="starships">Spaceships</option>
 						<option value="vehicles">Vehicles</option>
 						<option value="species">Species</option>
 					</select>
-					<button type="submit">Search</button>
+					<button type="submit" onclick="getSearch();">Search</button>
 
 				</div>
+                <div class="well" style="display: none;">
+                <h3 id="errorMess" display="none"></h3>
+                <ul id="suggList" display="none"></ul>
+                </div>
 			</div>
 
 
@@ -70,18 +74,21 @@
 					<img src="images/luke.jpg" class="col-xs-6 col-sm-6 col-md-4">
 				</div>
 			</section>
-			<section>
+			<section class="movies-section">
 				<h2>Movies</h2>
 
 				<div class="row">
-
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-					<img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-
+					
+					<div class="col-xs-6 col-sm-6 col-md-4 episode1"></div>
+					<div class="col-xs-6 col-sm-6 col-md-4 episode2"></div>
+					<div class="col-xs-6 col-sm-6 col-md-4 episode3"></div>
+					<div class="col-xs-6 col-sm-6 col-md-4 episode4"></div>
+					<div class="col-xs-6 col-sm-6 col-md-4 episode5"></div>
+					<div class="col-xs-6 col-sm-6 col-md-4 episode6"></div>
+					<div class="col-xs-6 col-sm-6 col-md-4 episode7"></div>
+					<div class="col-xs-6 col-sm-6 col-md-4 episode8"></div>
+					<div class="col-xs-6 col-sm-6 col-md-4 episode9"></div>
+					<div class="col-xs-6 col-sm-6 col-md-4 episode10"></div>
 
 				</div>
 			</section>
