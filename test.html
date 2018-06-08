@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <h1 id="title"></h1>
+    <script>
+        window.addEventListener("load", init);
+
+        function init() {
+            let i = 1;
+            let xhr = new XMLHttpRequest(); // XML Request
+            xhr.open("GET", "https://swapi.co/api/people/" + i + "/", false);
+            xhr.send();
+            console.log(xhr.status);
+            let bpiObject = JSON.parse(xhr.responseText);
+            console.log(bpiObject);
+
+            let title = document.getElementById("title");
+            title.innerHTML = `Name: ${bpiObject.name}`
+        }
+    </script>
+</body>
+
+</html>
