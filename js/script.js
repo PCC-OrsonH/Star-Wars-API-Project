@@ -7,7 +7,7 @@ function getSearch() {
     /* Calling the Function that stores the API calls */
     thisAPISux(type, value);
 }
-// Function for calling the API and storing the results
+// Function for calling the API and storing the results and searching for the value :)
 function thisAPISux(type, value) {
     /* Variables */
     let thing = [];
@@ -38,7 +38,8 @@ function thisAPISux(type, value) {
             }
         }
     }
-    // Function for validating the search
+    
+    /* Function for checking the search */
     function searching(stuff) {
         /* Variables */
         let i;
