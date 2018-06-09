@@ -10,7 +10,6 @@ function getSearch() {
 // Function for calling the API and storing the results
 function thisAPISux(type, value) {
     /* Variables */
-    let firstObject;
     let thing = [];
     let x = 0;
 
