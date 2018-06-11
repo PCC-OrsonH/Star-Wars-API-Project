@@ -25,17 +25,15 @@
     <link href="css/style.css" rel="stylesheet">
 
     <script src="js/script.js"></script>
-    <script src="js/planets.js"></script>
-    <title>Planets | CAS 265 SWAPI</title>
+    <title>Vehicles | CAS 265 SWAPI</title>
 
 </head>
 
-<body id="planets">
+<body id="vehicles">
 
     <header>
         <div class="header-text">
             <img src="images/logo.png">
-
             <div>
                 <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
                 <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
@@ -55,19 +53,20 @@
                 <ul id="suggList" display="none"></ul>
             </div>
         </div>
+
     </header>
 
     <main>
 
         <section class="row">
 
-            <img class="col-xs-12 col-sm-6 col-md-4" src="images/tatooine.jpg">
+            <img class="col-xs-12 col-sm-6 col-md-4" src="images/x-wing.jpg">
 
             <div class="col-xs-12 col-sm-6 col-md-8">
 
-                <h2>Tatooine</h2>
+                <h2>Vehicles</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor orci ut magna vehicula, quis scelerisque leo tincidunt. Phasellus fringilla condimentum enim non convallis. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                <p id="name">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor orci ut magna vehicula, quis scelerisque leo tincidunt. Phasellus fringilla condimentum enim non convallis. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 
 
 
@@ -76,24 +75,66 @@
             <div class="row col-xs-12 col-sm-12 col-md-12">
 
                 <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Terrain</h3>
-                    <p>Lorem Ipsum</p>
+                    <h3>Model</h3>
+                    <p id="model">Lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Climate</h3>
-                    <p>lorem Ipsum</p>
+                    <h3>Manufacturer</h3>
+                    <p id="manufacturer">lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Population</h3>
-                    <p>Lorem Ipsum</p>
+                    <h3>Cost in Credits</h3>
+                    <p id="cost_in_credits">Lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Diameter</h3>
-                    <p>Lorem Ipsum</p>
+                    <h3>Length</h3>
+                    <p id="length">Lorem Ipsum</p>
                 </aside>
 
             </div>
+            
+            <div class="row col-xs-12 col-sm-12 col-md-12">
 
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Max Atmosphering Speed</h3>
+                    <p id="max_atmosphering_speed">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Crew</h3>
+                    <p id="crew">lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Passengers</h3>
+                    <p id="passengers">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Cargo Capacity</h3>
+                    <p id="cargo_capacity">Lorem Ipsum</p>
+                </aside>
+
+            </div>
+            
+            <div class="row col-xs-12 col-sm-12 col-md-12">
+
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Consumables</h3>
+                    <p id="consumables">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Vehicle Class</h3>
+                    <p id="vehicle_class">lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Pilots</h3>
+                    <p id="pilots">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Films</h3>
+                    <p id="films">Lorem Ipsum</p>
+                </aside>
+
+            </div>
+            
         </section>
 
         <section class="movies-section">
@@ -132,6 +173,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/3aaa070cfc.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/vehicles.js"></script>
 </body>
 
 </html>
