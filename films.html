@@ -27,7 +27,6 @@
     <script src="js/script.js"></script>
     <script src="js/films.js"></script>
     <title>Films | CAS 265 SWAPI</title>
-
 </head>
 
 <body id="films" onload="getInfo();">
@@ -40,13 +39,13 @@
                 <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
                 <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
                 <select>
-						<option value="planets">Planets</option>
-						<option value="films">Films</option>
-						<option value="people">Characters</option>
-						<option value="starships">Spaceships</option>
-						<option value="vehicles">Vehicles</option>
-						<option value="species">Species</option>
-					</select>
+                    <option value="planets">Planets</option>
+                    <option value="films">Films</option>
+                    <option value="people">Characters</option>
+                    <option value="starships">Spaceships</option>
+                    <option value="vehicles">Vehicles</option>
+                    <option value="species">Species</option>
+                </select>
                 <button type="submit" onclick="getSearch();">Search</button>
 
             </div>
@@ -55,36 +54,34 @@
                 <ul id="suggList" display="none"></ul>
             </div>
         </div>
-
-
     </header>
-
     <main>
         <section class="row">
-            <img class="col-xs-12 col-sm-6 col-md-4" src="images/phantom-menace.jpg">
+            <img class="col-xs-12 col-sm-6 col-md-4" src="">
             <div class="col-xs-12 col-sm-6 col-md-8">
-                <h2 id="title">Rogue One</h2>
-               <p id="desc"></p>
+                <h2 id="title">Movie Title</h2>
+                <p id="desc"></p>
             </div>
-
             <div class="row col-xs-12 col-sm-12 col-md-12">
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Director</h3>
+                    <p id="director">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Producer</h3>
+                    <p id="producer">lorem Ipsum</p>
+                </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
                     <h3>Release Date</h3>
                     <p id="release_date">Lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Director</h3>
-                    <p id="director">lorem Ipsum</p>
+                    <h3>Episode ID</h3>
+                    <p id="episode_id">Lorem Ipsum</p>
                 </aside>
-                <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Producer</h3>
-                    <p id="producer">Lorem Ipsum</p>
-                </aside>
-                <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Episode Id</h3>
-                    <p id="episodeId">Lorem Ipsum</p>
-                </aside>
+
             </div>
+
 
         </section>
 
@@ -100,11 +97,31 @@
         <h2>Follow Star Wars</h2>
         <div>
             <ul>
-                <li><a href="https://www.facebook.com/StarWars"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.instagram.com/starwars/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="https://twitter.com/starwars/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.tumblr.com/search/star%20wars" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.youtube.com/starwars" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                <li>
+                    <a href="https://www.facebook.com/StarWars">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/starwars/" target="_blank">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/starwars/" target="_blank">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tumblr.com/search/star%20wars" target="_blank">
+                        <i class="fa fa-tumblr" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/starwars" target="_blank">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a>
+                </li>
             </ul>
         </div>
     </footer>
