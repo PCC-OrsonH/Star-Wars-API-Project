@@ -21,7 +21,7 @@ function updateInfo(data) {
     let director = document.getElementById("director");
     let producer = document.querySelector('#producer');
     let release_date = document.querySelector('#release_date');
-    let episode_id = document.querySelector("#episodeId");
+    let episode_id = document.querySelector("#episode_id");
 
     /* Setting HTML for Main Section */
     title.innerText = `${data.title}`;
@@ -31,6 +31,7 @@ function updateInfo(data) {
     episode_id.innerText = `${data.episode_id}`;
     release_date.innerText = `${data.release_date}`;
     for (let x = 0; x < data.characters.length; x++) {
+        console.log(data.characters[x]);
         foundCharacter(data.characters[x]);
     }
 }
