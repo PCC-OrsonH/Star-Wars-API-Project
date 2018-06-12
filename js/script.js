@@ -1,129 +1,101 @@
 // Function for getting the user search
 function getSearch() {
     /* Variables */
-
+    let type = document.getElementsByTagName("select")[0].value;
     let value = document.getElementById("search").value;
 
-    let type = document.getElementsByTagName("select")[0].value;
-
-    /* Calling the searching Function */
-
-    searching(value, type);
+    /* Calling the Function that stores the API calls */
+    thisAPISux(type, value);
 }
-// Function for validating the search
-function searching(value, type) {
+// Function for calling the API and storing the results and searching for the value :)
+function thisAPISux(type, value) {
     /* Variables */
+    let thing = [];
+    let x = 0;
 
-    let firstObject;
-    let i; 
-    let url;
-    let c;
-    let d;
+    /* Storing the first Object */
+    callingAPI("https://swapi.co/api/" + type + "/");
 
-    /* XML Request */
-    let xhr = new XMLHttpRequest(); 
-    xhr.open("GET", "https://swapi.co/api/" + type + "/", false);
-    xhr.send();
-    firstObject = JSON.parse(xhr.responseText);
- 
-    /* Searching for value */
+    /* Storing the rest of the objects */
+    function checking(foundObject) {
+        thing[x] = foundObject;
+        searching(thing[x])
+    }
+    
+    /* Function for calling the API */
+    function callingAPI(search) {
+        /* Variables */
+        let foundObject
 
-    value = value.charAt(0).toUpperCase() + value.slice(1);
-    for (i = 0; i < firstObject.results.length; i++) {
-        if (firstObject.results[i].name == value) {
-            url = firstObject.results[i].url;
-            break;
+        /* XML Request */
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", search, true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (this.readyState === this.DONE) {
+                foundObject = JSON.parse(xhr.responseText);
+                checking(foundObject);
+            }
         }
     }
- 
-    /* Searching for ID */ 
+    
+    /* Function for checking the search */
+    function searching(stuff) {
+        /* Variables */
+        let i;
+        let url = null;
+        let c;
+        let d;
 
-    if (i < firstObject.results.length) {
-        for (let x = 0; x < url.length; x++) {
-            c = url.charAt(x);
-            if (!isNaN(parseInt(c, 10))) {
-                d = url.charAt(x + 1);
-                if (!isNaN(parseInt(d, 10))) {
+        /* Searching for value */
+        value = value.charAt(0).toUpperCase() + value.slice(1);
+        for (i = 0; i < stuff.results.length; i++) {
+            if (type == "films") {
+                if (value == stuff.results[i].title) {
+                    url = stuff.results[i].url;
                     break;
-                } else if (d == "/") {
-                    d = " ";
+                }
+            } else {
+                if (value == stuff.results[i].name) {
+                    url = stuff.results[i].url;
                     break;
                 }
             }
         }
-        if (d == " ") {
-            window.location = type + ".html?=" + c;
-        } else {
-            window.location = type + ".html?=" + c + d;
-        }
-    } else {
-        if (i == firstObject.results.length && firstObject.next != null) {
-            callingAPI(value, type, firstObject.next);
-        } else {
-            badSearch(value, type);
-        }
-    }
-}
-// Function for calling the API multiple times for searches
-function callingAPI(value, type, search) {
-    /* Variables */
 
-    let firstObject;
-    let i;
-    let url;
-    let c;
-    let d;
-
-    /* XMl Request */
-
-    let xhr = new XMLHttpRequest(); 
-    xhr.open("GET", search, false); 
-    xhr.send(); 
-    console.log(xhr.status); 
-    firstObject = JSON.parse(xhr.responseText); 
-
-    /* Searching for value */ 
-
-    for (i = 0; i < firstObject.results.length; i++) {
-        if (firstObject.results[i].name == value) {
-            url = firstObject.results[i].url;
-            break;
-        }
-    }
-
-    /* Searching for ID */
-
-    if (i < firstObject.results.length) {
-        for (let x = 0; x < url.length; x++) {
-            c = url.charAt(x);
-            if (!isNaN(parseInt(c, 10))) {
-                d = url.charAt(x + 1);
-                if (!isNaN(parseInt(d, 10))) {
-                    break;
-                } else if (d == "/") {
-                    d = " ";
-                    break;
+        /* Searching for ID */
+        if (url != null) {
+            for (let y = 0; y < url.length; y++) {
+                c = url.charAt(y);
+                if (!isNaN(parseInt(c, 10))) {
+                    d = url.charAt(y + 1);
+                    if (!isNaN(parseInt(d, 10))) {
+                        break;
+                    } else if (d == "/") {
+                        d = " ";
+                        break;
+                    }
                 }
             }
-        }
-        if (d == " ") {
-            window.location = type + ".html?=" + c;
+            if (d == " ") {
+                window.location = type + ".html?=" + c;
+            } else {
+                window.location = type + ".html?=" + c + d;
+            }
         } else {
-            window.location = type + ".html?=" + c + d;
-        }
-    } else {
-        if (i == firstObject.results.length && firstObject.next != null) {
-            callingAPI(value, type, firstObject.next); // Recalling the function with the new API URL
-        } else {
-            badSearch(value, type);
+            if (stuff.next == null) {
+                badSearch(value, thing, type);
+            } else {
+                x++;
+                callingAPI(stuff.next);
+            }
         }
     }
 }
 // Function for making suggestions on bad searches
-function badSearch(value, type) {
+function badSearch(value, thing, type) {
     /* Variables */
-
-    let firstLetter = value.charAt(0);
+    let firstLetter = value.charAt(0).toUpperCase();
     let area = document.getElementById("suggList");
     let eMessage = document.getElementById("errorMess");
 
@@ -135,71 +107,42 @@ function badSearch(value, type) {
     eMessage.innerHTML = "Whoops! Can't seem to find that " + "<br>" + "Did you mean: ";
     document.getElementsByClassName("well")[0].style.display = "block";
 
-    // Getting the first list in the category 
-    let firstObject = badCall("https://swapi.co/api/" + type + "/");
-
-    /* Searching the List for suggestions */
-
-    if (type == "films") {
-        for (let i = 0; i < firstObject.results.length; i++) {
-            if (firstLetter == firstObject.results[i].title.charAt(0)) {
-                let listItem = document.createElement("li");
-                let a = document.createElement("a");
-                a.innerHTML = firstObject.results[i].title;
-                let url = foundSomething(firstObject.results[i], type);
-                a.setAttribute("href", url);
-                listItem.appendChild(a);
-                area.appendChild(listItem);
-            }
-        }
-    } else {
-        while (true) {
-            for (let i = 0; i < firstObject.results.length; i++) {
-                if (firstLetter == firstObject.results[i].name.charAt(0)) {
+    /* Searching for suggestions */
+    for (let i = 0; i < thing.length; i++) {
+        for (let x = 0; x < thing[i].results.length; x++) {
+            if (type == "films") {
+                if (firstLetter == thing[i].results[x].title.charAt(0)) {
+                    /* Variables */
                     let listItem = document.createElement("li");
                     let a = document.createElement("a");
-                    a.innerHTML = firstObject.results[i].name;
-                    let url = foundSomething(firstObject.results[i], type);
+                    let url = foundSomething(thing[i].results[x], type);
+
+                    /* Displaying the Suggestion */
+                    a.innerHTML = thing[i].results[x].title;
+                    a.setAttribute("href", url);
+                    listItem.appendChild(a);
+                    area.appendChild(listItem);
+                }
+            } else {
+                if (firstLetter == thing[i].results[x].name.charAt(0)) {
+                    /* Variables */
+                    let listItem = document.createElement("li");
+                    let a = document.createElement("a");
+                    let url = foundSomething(thing[i].results[x], type);
+
+                    /* Displaying the Suggestion */
+                    a.innerHTML = thing[i].results[x].name;
                     a.setAttribute("href", url);
                     listItem.appendChild(a);
                     area.appendChild(listItem);
                 }
             }
-            firstObject = badCall(firstObject.next);
-            if (firstObject.next == null) {
-                for (let i = 0; i < firstObject.results.length; i++) {
-                    if (firstLetter == firstObject.results[i].name.charAt(0)) {
-                        let listItem = document.createElement("li");
-                        let a = document.createElement("a");
-                        a.innerHTML = firstObject.results[i].name;
-                        let url = foundSomething(firstObject.results[i], type);
-                        a.setAttribute("href", url);
-                        listItem.appendChild(a);
-                        area.appendChild(listItem);
-                    }
-                }
-                break;
-            }
         }
     }
-}
-// Function for calling the API 
-function badCall(search) {
-    /* Variables */
-    let firstObject;
-
-    /* XML Request */
-
-    let xhr = new XMLHttpRequest(); // XML Request
-    xhr.open("GET", search, false); // Requesting all the pokemon in the database
-    xhr.send(); // sending the request
-    firstObject = JSON.parse(xhr.responseText); // Declaring a variable for the JSON object
-    return firstObject;
 }
 // Function for clearing the Error Message and Suggestion List
 function clearing() {
     /* Clearing lists */
-
     document.getElementById("errorMess").style.display = "none";
     document.getElementById("suggList").style.display = "none";
     document.getElementById("suggList").innerHTML = " ";
@@ -213,7 +156,7 @@ function foundSomething(results, type) {
     let url;
     let c;
     let d;
-    
+
     /* Searching for ID */
     url = results.url;
     for (let x = 0; x < url.length; x++) {
