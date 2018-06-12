@@ -9,6 +9,7 @@ function getInfo() {
     xhr.onreadystatechange = function () {
         if (this.readyState === this.DONE) {
             let newObject = JSON.parse(xhr.responseText);
+            console.log(newObject);
             updateInfo(newObject);
         }
     }
@@ -16,16 +17,15 @@ function getInfo() {
 
 function updateInfo(data) {
     /* Variables */
-    let name = document.getElementById("#name");
-    let rotation_period = document.getElementById("#rotation_period");
-    let orbital_period = document.getElementById("#orbital_period");
+    let name = document.getElementById("name");
+    let rotation_period = document.getElementById("rotation_period");
+    let orbital_period = document.getElementById("orbital_period");
     let diameter = document.querySelector('#diameter');
     let climate = document.querySelector('#climate');
     let gravity = document.querySelector("#gravity");
     let terrain = document.querySelector("#terrain");
     let surface_water = document.querySelector("#surface_water");
     let population = document.querySelector("#population");
-    let residents = document.querySelector("#residents");
     
     /* Setting HTML for Main Section */
     name.innerText = `${data.name}`;
@@ -36,12 +36,69 @@ function updateInfo(data) {
     gravity.innerText = `${data.gravity}`;
     surface_water.innerText = `${data.surface_water}`;
     population.innerText = `${data.population}`;
-    residents.innerText = `${data.residents}`;
-    for (let x = 0; x < data.characters.length; x++) {
-        foundCharacter(data.characters[x]);
+    terrain.innerText = `${data.terrain}`;
+    for(let x = 0; x < data.residents.length; x++){
+        foundCharacter(data.residents[x]);
+    }
+    for(let x = 0; x < data.films.length; x++){
+        foundMovie(data.films[x]);
     }
 }
 
+function foundMovie(stuff) {
+    /* variables */
+    let newObject;
+    let id;
+    let area = document.getElementById("movies");
+
+    /* XML Call */
+    let xhr = new XMLHttpRequest;
+    xhr.open("GET", stuff, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (this.readyState === this.DONE) {
+            newObject = JSON.parse(xhr.responseText);
+            /* Variables */
+            let image = document.createElement("img");
+            let a = document.createElement("a");
+            let div = document.createElement("div");
+            let url;
+
+            /* Setting Attributes */
+            switch(newObject.episode_id){
+                case 1:
+                image.setAttribute("src", "images/phantom-menace.jpg");
+                break;
+                case 2:
+                image.setAttribute("src", "images/attack-of-the-clones.jpg");
+                break;
+                case 3:
+                image.setAttribute("src", "images/revenge-of-the-sith.jpg");
+                break;
+                case 4:
+                image.setAttribute("src", "images/a-new-hope.jpg");
+                break;
+                case 5:
+                image.setAttribute("src", "images/empire-strikes-back.jpg");
+                break; 
+                case 6:
+                image.setAttribute("src", "images/return-of-the-jedi.jpg");
+                break;
+                case 7:
+                image.setAttribute("src", "images/force-awakens-poster.jpg");
+                break;
+            }
+            url = foundSomething(newObject, "films");
+            a.setAttribute("href", url);
+            div.setAttribute("class", "col-xs-12 col-sm-6 col-md-4");
+
+            /* Displaying */
+            a.appendChild(image);
+            div.appendChild(a);
+            area.appendChild(div);
+        }
+    }
+}
 function foundCharacter(stuff) {
     /* variables */
     let newObject;
