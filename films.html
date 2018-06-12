@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="author" content="CHANGE-ME">
@@ -9,9 +8,9 @@
     <!-- HTML Shiv -->
 
     <!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
-</script>
-<![endif]-->
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+    </script>
+    <![endif]-->
 
     <!-- Mobile Stuff -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,16 +27,13 @@
     <script src="js/films.js"></script>
     <title>Films | CAS 265 SWAPI</title>
 </head>
-
 <body id="films" onload="getInfo();">
-
     <header>
         <div class="header-text">
             <img src="images/logo.png">
-
             <div>
                 <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
-                <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
+                <!-- Planets, Spaceships, Vehicles, People, Films and Species -->
                 <select>
                     <option value="planets">Planets</option>
                     <option value="films">Films</option>
@@ -57,7 +53,7 @@
     </header>
     <main>
         <section class="row">
-            <img class="col-xs-12 col-sm-6 col-md-4" src="">
+            <img class="col-xs-12 col-sm-6 col-md-4" src="" id="poster">
             <div class="col-xs-12 col-sm-6 col-md-8">
                 <h2 id="title">Movie Title</h2>
                 <p id="desc"></p>
@@ -92,7 +88,6 @@
             </ul>
         </section>
     </main>
-
     <footer>
         <h2>Follow Star Wars</h2>
         <div>
@@ -125,7 +120,6 @@
             </ul>
         </div>
     </footer>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/3aaa070cfc.js"></script>
     <script src="js/bootstrap.min.js"></script>
