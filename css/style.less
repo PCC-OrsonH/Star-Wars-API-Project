@@ -36,17 +36,29 @@ header {
 			margin: 2em auto;
 			width: 50%;
 		}
+	}
+	
+	.search {
+		display: block;
+		margin-top: 6em;
+		padding: 2em;
+		text-align: center;
+	}
+	
+	.well {
+		border-radius: 0;
+		text-align: center;
+		
+	}
+	
+	input, select, button {
+		border: 1px solid @primaryColor;
+		padding: .5em;
+	}
 
-		input, select, button {
-			border: 1px solid @primaryColor;
-			border-radius: 10%;
-			padding: .5em;
-		}
-
-		button {
-			background-color: @primaryColor;
-			color: @lightColor;
-		}
+	button {
+		background-color: @primaryColor;
+		color: @lightColor;
 	}
 
 }

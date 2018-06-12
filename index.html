@@ -24,8 +24,8 @@
 		<link href="css/reset.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 
-        <!-- JavaScript -->
-        <script src="js/script.js"></script>
+		<!-- JavaScript -->
+		<script src="js/script.js"></script>
 		<title>Star Wars Database</title>
 
 	</head>
@@ -34,25 +34,26 @@
 
 		<header>
 			<div class="header-text">
-				<img src="images/logo.png">
-				<div>
-					<input id="search" type="text" placeholder="Search here.." onclick="clearing();">
-<!--					Planets, Spaceships, Vehicles, People, Films and Species -->
-					<select>
-						<option value="planets">Planets</option>
-						<option value="films">Films</option>
-						<option value="people">Characters</option>
-						<option value="starships">Spaceships</option>
-						<option value="vehicles">Vehicles</option>
-						<option value="species">Species</option>
-					</select>
-					<button type="submit" onclick="getSearch();">Search</button>
 
-				</div>
-                <div class="well" style="display: none;">
-                <h3 id="errorMess" display="none"></h3>
-                <ul id="suggList" display="none"></ul>
-                </div>
+				<img src="images/logo.png">
+			</div>
+			<div class="search">
+				<input id="search" type="text" placeholder="Search here.." onclick="clearing();">
+				<!--					Planets, Spaceships, Vehicles, People, Films and Species -->
+				<select>
+					<option value="planets">Planets</option>
+					<option value="films">Films</option>
+					<option value="people">Characters</option>
+					<option value="starships">Spaceships</option>
+					<option value="vehicles">Vehicles</option>
+					<option value="species">Species</option>
+				</select>
+				<button type="submit" onclick="getSearch();">Search</button>
+
+			</div>
+			<div class="well" style="display: none;">
+				<h3 id="errorMess" display="none"></h3>
+				<ul id="suggList" display="none"></ul>
 			</div>
 
 
@@ -63,7 +64,7 @@
 		</nav>
 
 		<main>
-		
+
 			<section class="characters-section">
 				<h2>Characters</h2>
 
@@ -85,7 +86,7 @@
 				<h2>Movies</h2>
 
 				<div class="row">
-					
+
 					<a href="films.html?=4"><div class="col-xs-6 col-sm-6 col-md-4 episode1"></div></a>
 					<a href="films.html?=5"><div class="col-xs-6 col-sm-6 col-md-4 episode2"></div></a>
 					<a href="films.html?=6"><div class="col-xs-6 col-sm-6 col-md-4 episode3"></div></a>
