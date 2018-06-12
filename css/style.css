@@ -75,6 +75,11 @@ header .header-text button {
   background-attachment: fixed;
   background-size: cover;
 }
+#vehicles header {
+  background: url(../images/x-wing.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 section.movies-section div div,
 section.characters-section div div {
   min-height: 400px;
