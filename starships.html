@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="CHANGE-ME">
+    <meta name="description" content="CHANGE-ME">
+
+    <!-- HTML Shiv -->
+
+    <!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+
+    <!-- Mobile Stuff -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Stuff -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/kai5rdv.css">
+    <!-- CSS Stuff -->
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="js/script.js"></script>
+    <script src="js/starships.js"></script>
+    <title>Starships | CAS 265 SWAPI</title>
+
+</head>
+
+<body id="planets">
+
+    <header>
+        <div class="header-text">
+            <img src="images/logo.png">
+
+            <div>
+                <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
+                <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
+                <select>
+						<option value="planets">Planets</option>
+						<option value="films">Films</option>
+						<option value="people">Characters</option>
+						<option value="starships">Spaceships</option>
+						<option value="vehicles">Vehicles</option>
+						<option value="species">Species</option>
+					</select>
+                <button type="submit" onclick="getSearch();">Search</button>
+
+            </div>
+            <div class="well" style="display: none;">
+                <h3 id="errorMess" display="none"></h3>
+                <ul id="suggList" display="none"></ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="row">
+
+            <img class="col-xs-12 col-sm-6 col-md-4" src="images/x-wing.jpg">
+
+            <div class="col-xs-12 col-sm-6 col-md-8">
+
+                <h2 id="name">X-Wing</h2>
+
+                <p id="pilots">Starships. </p>
+
+
+
+            </div>
+
+            <div class="row col-xs-12 col-sm-12 col-md-12">
+
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Model</h3>
+                    <p id="model">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Manufacturer</h3>
+                    <p id="manufacturer">lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Cost In Credits</h3>
+                    <p id="cost_in_credits">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Length</h3>
+                    <p id="length">Lorem Ipsum</p>
+                </aside>
+
+            </div>
+
+            <div class="row col-xs-12 col-sm-12 col-md-12">
+
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Max Atmosphering Speed</h3>
+                    <p id="max_atmosphering_speed">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Crew</h3>
+                    <p id="crew">lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Passengers</h3>
+                    <p id="passengers">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Cargo Capacity</h3>
+                    <p id="cargo_capacity">Lorem Ipsum</p>
+                </aside>
+
+            </div>
+
+            <div class="row col-xs-12 col-sm-12 col-md-12">
+
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Consumables</h3>
+                    <p id="consumables">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Hyperdrive Rating</h3>
+                    <p id="hyperdrive_rating">lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>MGLT</h3>
+                    <p id="mglt">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Starship Class</h3>
+                    <p id="starship_class">Lorem Ipsum</p>
+                </aside>
+
+            </div>
+
+        </section>
+
+        <section class="movies-section">
+            <h2>Movies</h2>
+
+            <div class="row">
+
+                <div class="col-xs-6 col-sm-6 col-md-4 episode1"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode2"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode3"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode4"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode5"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode6"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode7"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode8"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode9"></div>
+                <div class="col-xs-6 col-sm-6 col-md-4 episode10"></div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h2>Follow Star Wars</h2>
+        <div>
+            <ul>
+                <li><a href="https://www.facebook.com/StarWars"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/starwars/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/starwars/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.tumblr.com/search/star%20wars" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/starwars" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/3aaa070cfc.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
