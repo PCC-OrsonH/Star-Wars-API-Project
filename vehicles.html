@@ -9,9 +9,9 @@
     <!-- HTML Shiv -->
 
     <!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
-</script>
-<![endif]-->
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+    </script>
+    <![endif]-->
 
     <!-- Mobile Stuff -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +20,7 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/kai5rdv.css">
+
     <!-- CSS Stuff -->
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -30,7 +31,7 @@
 
 </head>
 
-<body id="vehicles">
+<body id="vehicles" onload="getInfo();">
 
     <header>
         <div class="header-text">
@@ -61,16 +62,9 @@
 
         <section class="row">
 
-            <img class="col-xs-12 col-sm-6 col-md-4" src="images/x-wing.jpg">
-
             <div class="col-xs-12 col-sm-6 col-md-8">
 
                 <h2 id="name">AT - AT</h2>
-
-                <p>Vehicles </p>
-
-
-
             </div>
 
             <div class="row col-xs-12 col-sm-12 col-md-12">
@@ -101,11 +95,11 @@
                     <p id="max_atmosphering_speed">Lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Crew</h3>
+                    <h3>Crew Size</h3>
                     <p id="crew">lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Passengers</h3>
+                    <h3>Number of Passengers</h3>
                     <p id="passengers">Lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
@@ -125,15 +119,6 @@
                     <h3>Vehicle Class</h3>
                     <p id="vehicle_class">lorem Ipsum</p>
                 </aside>
-                <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Pilots</h3>
-                    <p id=" id="pilots"">Lorem Ipsum</p>
-                </aside>
-                <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Hyperdrive Rating</h3>
-                    <p id="">Lorem Ipsum</p>
-                </aside>
-
             </div>
 
         </section>
@@ -141,19 +126,7 @@
         <section class="movies-section">
             <h2>Movies</h2>
 
-            <div class="row">
-
-                <div class="col-xs-6 col-sm-6 col-md-4 episode1"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode2"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode3"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode4"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode5"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode6"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode7"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode8"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode9"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode10"></div>
-
+            <div class="row" id="movies">
             </div>
         </section>
     </main>

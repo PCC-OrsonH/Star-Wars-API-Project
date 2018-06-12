@@ -9,7 +9,6 @@ function getInfo() {
     xhr.onreadystatechange = function () {
         if (this.readyState === this.DONE) {
             let newObject = JSON.parse(xhr.responseText);
-            console.log(newObject);
             updateInfo(newObject);
         }
     }
