@@ -30,7 +30,7 @@
 
 </head>
 
-<body id="planets">
+<body id="planets" onload="getInfo()">
 
     <header>
         <div class="header-text">
@@ -60,16 +60,9 @@
     <main>
 
         <section class="row">
-
-            <img class="col-xs-12 col-sm-6 col-md-4" src="images/x-wing.jpg">
-
             <div class="col-xs-12 col-sm-6 col-md-8">
 
                 <h2 id="name">X-Wing</h2>
-
-                <p id="pilots">Starships. </p>
-
-
 
             </div>
 
@@ -141,18 +134,7 @@
         <section class="movies-section">
             <h2>Movies</h2>
 
-            <div class="row">
-
-                <div class="col-xs-6 col-sm-6 col-md-4 episode1"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode2"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode3"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode4"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode5"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode6"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode7"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode8"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode9"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode10"></div>
+            <div class="row" id="movies">
 
             </div>
         </section>
