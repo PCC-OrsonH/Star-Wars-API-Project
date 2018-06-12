@@ -54,7 +54,6 @@ function updateInfo(data) {
         image.setAttribute("src", "images/force-awakens-poster.jpg");
     }
     for (let x = 0; x < data.characters.length; x++) {
-        console.log(data.characters[x]);
         foundCharacter(data.characters[x]);
     }
 }

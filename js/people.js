@@ -16,9 +16,9 @@ function getInfo() {
 
 function updateInfo(data) {
     /* Variables */
-    let name = document.getElementById("#name");
-    let height = document.getElementById("#height");
-    let mass = document.getElementById("#mass");
+    let name = document.getElementById("name");
+    let height = document.getElementById("height");
+    let mass = document.getElementById("mass");
     let hair_color = document.querySelector('#hair_color');
     let skin_color = document.querySelector('#skin_color');
     let eye_color = document.querySelector("#eye_color");
@@ -34,16 +34,16 @@ function updateInfo(data) {
     eye_color.innerText = `${data.eye_color}`;
     birth_year.innerText = `${data.birth_year}`;
     gender.innerText = `${data.gender}`;
-    for (let x = 0; x < data.characters.length; x++) {
-        foundCharacter(data.characters[x]);
+    for(let x = 0; x < data.films.length; x++){
+        foundMovie(data.films[x]); 
     }
 }
 
-function foundCharacter(stuff) {
+function foundMovie(stuff) {
     /* variables */
     let newObject;
-    let url;
-    let area = document.getElementById("characters");
+    let id;
+    let area = document.getElementById("movies");
 
     /* XML Call */
     let xhr = new XMLHttpRequest;
@@ -53,45 +53,43 @@ function foundCharacter(stuff) {
         if (this.readyState === this.DONE) {
             newObject = JSON.parse(xhr.responseText);
             /* Variables */
-            let listItem = document.createElement("li");
+            let image = document.createElement("img");
             let a = document.createElement("a");
-            url = foundSomething(newObject, "people");
-            
-            /* Displaying Character */
-            a.innerHTML = newObject.name;
+            let div = document.createElement("div");
+            let url;
+
+            /* Setting Attributes */
+            switch(newObject.episode_id){
+                case 1:
+                image.setAttribute("src", "images/phantom-menace.jpg");
+                break;
+                case 2:
+                image.setAttribute("src", "images/attack-of-the-clones.jpg");
+                break;
+                case 3:
+                image.setAttribute("src", "images/revenge-of-the-sith.jpg");
+                break;
+                case 4:
+                image.setAttribute("src", "images/a-new-hope.jpg");
+                break;
+                case 5:
+                image.setAttribute("src", "images/empire-strikes-back.jpg");
+                break; 
+                case 6:
+                image.setAttribute("src", "images/return-of-the-jedi.jpg");
+                break;
+                case 7:
+                image.setAttribute("src", "images/force-awakens-poster.jpg");
+                break;
+            }
+            url = foundSomething(newObject, "films");
             a.setAttribute("href", url);
-            listItem.appendChild(a);
-            area.appendChild(listItem);
+            div.setAttribute("class", "col-xs-12 col-sm-6 col-md-4");
+
+            /* Displaying */
+            a.appendChild(image);
+            div.appendChild(a);
+            area.appendChild(div);
         }
     }
 }
-/*
-let name = document.querySelector('#name');
-let height = document.querySelector('#height');
-let mass = document.querySelector('#mass');
-let hair_color = document.querySelector('#hair_color');
-let skin_color = document.querySelector('#skin_color');
-let eye_color = document.querySelector('#eye_color');
-let birth_year = document.querySelector('#birth_year');
-let gender = document.querySelector('#gender');
-
-var number = document.URL.substring(document.URL.indexOf('=') + 1);
-
-function getInfo() {
-    axios.get('https://swapi.co/api/people/' + number + '/').then(function(response) {
-        updateInfo(response.data);
-    });
-}
-
-function updateInfo(data) {
-    name.innerText = `Name: ${data.name}`;
-    height.innerText = `Height: ${data.height}`;
-    mass.innerText = `Mass: ${data.mass}`;
-    hair_color.innerText = `Hair Color: ${data.hair_color}`;
-    skin_color.innerText = `Skin Color: ${data.skin_color}`;
-    eye_color.innerText = `Eye Color: ${data.eye_color}`;
-    birth_year.innerText = `Birth Year: ${data.birth_year}`;
-    gender.innerText = `Gender: ${data.gender}`;
-}
-
-button.addEventListener('click', getInfo);*/

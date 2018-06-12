@@ -30,12 +30,11 @@
 
 </head>
 
-<body id="characters">
+<body id="characters" onload="getInfo()">
 
     <header>
         <div class="header-text">
             <img src="images/logo.png">
-
             <div>
                 <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
                 <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
@@ -48,36 +47,20 @@
 						<option value="species">Species</option>
 					</select>
                 <button type="submit" onclick="getSearch();">Search</button>
-
             </div>
             <div class="well" style="display: none;">
                 <h3 id="errorMess" display="none"></h3>
                 <ul id="suggList" display="none"></ul>
             </div>
-
         </div>
-
-
     </header>
-
     <main>
-
         <section class="row">
-
-            <img class="col-xs-12 col-sm-6 col-md-4" src="images/luke.jpg">
-
             <div class="col-xs-12 col-sm-6 col-md-8">
-
                 <h2 id="name">Luke Skywalker</h2>
-
                 <p> </p>
-
-
-
             </div>
-
             <div class="row col-xs-12 col-sm-12 col-md-12">
-
                 <aside class="col-xs-6 col-sm-6 col-md-3">
                     <h3>Height</h3>
                     <p id="height">Lorem Ipsum</p>
@@ -94,11 +77,8 @@
                     <h3>Skin Color</h3>
                     <p id="skin_color">Lorem Ipsum</p>
                 </aside>
-
             </div>
-            
             <div class="row col-xs-12 col-sm-12 col-md-12">
-
                 <aside class="col-xs-6 col-sm-6 col-md-3">
                     <h3>Eye Color</h3>
                     <p id="eye_color">Lorem Ipsum</p>
@@ -111,11 +91,6 @@
                     <h3>Gender</h3>
                     <p id="gender">Lorem Ipsum</p>
                 </aside>
-                <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>N/A</h3>
-                    <p>N/A</p>
-                </aside>
-
             </div>
 
 
@@ -124,16 +99,7 @@
         <section>
             <h2>Movies</h2>
 
-            <div class="row">
-
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-
-
+            <div class="row" id="movies">
             </div>
         </section>
     </main>
