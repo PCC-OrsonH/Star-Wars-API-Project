@@ -79,7 +79,7 @@ header button {
   background-attachment: fixed;
   background-size: cover;
 }
-#planets header {
+#starships header {
   background: url(../images/spaceships.jpg) no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -92,8 +92,6 @@ header button {
 section.movies-section div div,
 section.characters-section div div {
   min-height: 400px;
-  margin-left: 2.5%;
-  width: 45%;
 }
 section.movies-section div.row,
 section.characters-section div.row {
@@ -217,12 +215,51 @@ section.characters ul li {
 #vehicles section:first-of-type p {
   margin-bottom: 2em;
 }
+#characters section:first-of-type div,
+#films section:first-of-type div,
+#planets section:first-of-type div,
+#species section:first-of-type div,
+#starships section:first-of-type div,
+#vehicles section:first-of-type div {
+  text-align: center;
+}
+#characters section:first-of-type div h3,
+#films section:first-of-type div h3,
+#planets section:first-of-type div h3,
+#species section:first-of-type div h3,
+#starships section:first-of-type div h3,
+#vehicles section:first-of-type div h3 {
+  text-align: center;
+  font-size: 100%;
+}
+#characters section:first-of-type div aside,
+#films section:first-of-type div aside,
+#planets section:first-of-type div aside,
+#species section:first-of-type div aside,
+#starships section:first-of-type div aside,
+#vehicles section:first-of-type div aside {
+  height: 125px;
+}
+#characters section:first-of-type div aside p,
+#films section:first-of-type div aside p,
+#planets section:first-of-type div aside p,
+#species section:first-of-type div aside p,
+#starships section:first-of-type div aside p,
+#vehicles section:first-of-type div aside p {
+  margin-top: .5em;
+}
 #characters section:first-of-type div:nth-of-type(2),
 #films section:first-of-type div:nth-of-type(2),
 #planets section:first-of-type div:nth-of-type(2),
 #species section:first-of-type div:nth-of-type(2),
 #starships section:first-of-type div:nth-of-type(2),
-#vehicles section:first-of-type div:nth-of-type(2) {
+#vehicles section:first-of-type div:nth-of-type(2),
+#characters section:first-of-type div:nth-of-type(3),
+#films section:first-of-type div:nth-of-type(3),
+#planets section:first-of-type div:nth-of-type(3),
+#species section:first-of-type div:nth-of-type(3),
+#starships section:first-of-type div:nth-of-type(3),
+#vehicles section:first-of-type div:nth-of-type(3) {
   margin-top: 2em;
 }
 #characters section:first-of-type div:nth-of-type(2) aside,
@@ -230,7 +267,13 @@ section.characters ul li {
 #planets section:first-of-type div:nth-of-type(2) aside,
 #species section:first-of-type div:nth-of-type(2) aside,
 #starships section:first-of-type div:nth-of-type(2) aside,
-#vehicles section:first-of-type div:nth-of-type(2) aside {
+#vehicles section:first-of-type div:nth-of-type(2) aside,
+#characters section:first-of-type div:nth-of-type(3) aside,
+#films section:first-of-type div:nth-of-type(3) aside,
+#planets section:first-of-type div:nth-of-type(3) aside,
+#species section:first-of-type div:nth-of-type(3) aside,
+#starships section:first-of-type div:nth-of-type(3) aside,
+#vehicles section:first-of-type div:nth-of-type(3) aside {
   border-top: 0.3px solid #416D8B;
   padding: 1em;
 }
@@ -240,12 +283,24 @@ section.characters ul li {
 #species section:first-of-type div:nth-of-type(2) aside:nth-of-type(1),
 #starships section:first-of-type div:nth-of-type(2) aside:nth-of-type(1),
 #vehicles section:first-of-type div:nth-of-type(2) aside:nth-of-type(1),
+#characters section:first-of-type div:nth-of-type(3) aside:nth-of-type(1),
+#films section:first-of-type div:nth-of-type(3) aside:nth-of-type(1),
+#planets section:first-of-type div:nth-of-type(3) aside:nth-of-type(1),
+#species section:first-of-type div:nth-of-type(3) aside:nth-of-type(1),
+#starships section:first-of-type div:nth-of-type(3) aside:nth-of-type(1),
+#vehicles section:first-of-type div:nth-of-type(3) aside:nth-of-type(1),
 #characters section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
 #films section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
 #planets section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
 #species section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
 #starships section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
-#vehicles section:first-of-type div:nth-of-type(2) aside:nth-of-type(3) {
+#vehicles section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
+#characters section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+#films section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+#planets section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+#species section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+#starships section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+#vehicles section:first-of-type div:nth-of-type(3) aside:nth-of-type(3) {
   border-right: 0.3px solid #416D8B;
 }
 #characters section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
@@ -254,12 +309,54 @@ section.characters ul li {
 #species section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
 #starships section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
 #vehicles section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
+#characters section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+#films section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+#planets section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+#species section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+#starships section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+#vehicles section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
 #characters section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
 #films section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
 #planets section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
 #species section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
 #starships section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
-#vehicles section:first-of-type div:nth-of-type(2) aside:nth-of-type(4) {
+#vehicles section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
+#characters section:first-of-type div:nth-of-type(3) aside:nth-of-type(4),
+#films section:first-of-type div:nth-of-type(3) aside:nth-of-type(4),
+#planets section:first-of-type div:nth-of-type(3) aside:nth-of-type(4),
+#species section:first-of-type div:nth-of-type(3) aside:nth-of-type(4),
+#starships section:first-of-type div:nth-of-type(3) aside:nth-of-type(4),
+#vehicles section:first-of-type div:nth-of-type(3) aside:nth-of-type(4) {
+  border-bottom: 0.3px solid #416D8B;
+}
+#starships section:first-of-type div h3,
+#vehicles section:first-of-type div h3 {
+  text-align: center;
+  font-size: 75%;
+}
+#starships section:first-of-type div aside,
+#vehicles section:first-of-type div aside {
+  height: 150px;
+}
+#starships section:first-of-type div:nth-of-type(4),
+#vehicles section:first-of-type div:nth-of-type(4) {
+  margin-top: 2em;
+}
+#starships section:first-of-type div:nth-of-type(4) aside,
+#vehicles section:first-of-type div:nth-of-type(4) aside {
+  border-top: 0.3px solid #416D8B;
+  padding: 1em;
+}
+#starships section:first-of-type div:nth-of-type(4) aside:nth-of-type(1),
+#vehicles section:first-of-type div:nth-of-type(4) aside:nth-of-type(1),
+#starships section:first-of-type div:nth-of-type(4) aside:nth-of-type(3),
+#vehicles section:first-of-type div:nth-of-type(4) aside:nth-of-type(3) {
+  border-right: 0.3px solid #416D8B;
+}
+#starships section:first-of-type div:nth-of-type(4) aside:nth-of-type(3),
+#vehicles section:first-of-type div:nth-of-type(4) aside:nth-of-type(3),
+#starships section:first-of-type div:nth-of-type(4) aside:nth-of-type(4),
+#vehicles section:first-of-type div:nth-of-type(4) aside:nth-of-type(4) {
   border-bottom: 0.3px solid #416D8B;
 }
 section {
@@ -334,6 +431,13 @@ footer .fa:hover {
   header .header-text img {
     width: 35%;
   }
+  #desc {
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0;
+    width: 60%;
+    font-size: 125%;
+  }
   section.movies-section div div,
   section.characters-section div div {
     min-height: 400px;
@@ -362,17 +466,44 @@ footer .fa:hover {
   #planets section:first-of-type div:nth-of-type(2) aside,
   #species section:first-of-type div:nth-of-type(2) aside,
   #starships section:first-of-type div:nth-of-type(2) aside,
-  #vehicles section:first-of-type div:nth-of-type(2) aside {
+  #vehicles section:first-of-type div:nth-of-type(2) aside,
+  #characters section:first-of-type div:nth-of-type(3) aside,
+  #films section:first-of-type div:nth-of-type(3) aside,
+  #planets section:first-of-type div:nth-of-type(3) aside,
+  #species section:first-of-type div:nth-of-type(3) aside,
+  #starships section:first-of-type div:nth-of-type(3) aside,
+  #vehicles section:first-of-type div:nth-of-type(3) aside {
     border: 0;
     border-right: 0.3px solid #416D8B;
     padding: 1em;
+  }
+  #characters section:first-of-type div:nth-of-type(2) aside p,
+  #films section:first-of-type div:nth-of-type(2) aside p,
+  #planets section:first-of-type div:nth-of-type(2) aside p,
+  #species section:first-of-type div:nth-of-type(2) aside p,
+  #starships section:first-of-type div:nth-of-type(2) aside p,
+  #vehicles section:first-of-type div:nth-of-type(2) aside p,
+  #characters section:first-of-type div:nth-of-type(3) aside p,
+  #films section:first-of-type div:nth-of-type(3) aside p,
+  #planets section:first-of-type div:nth-of-type(3) aside p,
+  #species section:first-of-type div:nth-of-type(3) aside p,
+  #starships section:first-of-type div:nth-of-type(3) aside p,
+  #vehicles section:first-of-type div:nth-of-type(3) aside p {
+    text-align: center;
+    margin-top: .5em;
   }
   #characters section:first-of-type div:nth-of-type(2) aside:last-of-type,
   #films section:first-of-type div:nth-of-type(2) aside:last-of-type,
   #planets section:first-of-type div:nth-of-type(2) aside:last-of-type,
   #species section:first-of-type div:nth-of-type(2) aside:last-of-type,
   #starships section:first-of-type div:nth-of-type(2) aside:last-of-type,
-  #vehicles section:first-of-type div:nth-of-type(2) aside:last-of-type {
+  #vehicles section:first-of-type div:nth-of-type(2) aside:last-of-type,
+  #characters section:first-of-type div:nth-of-type(3) aside:last-of-type,
+  #films section:first-of-type div:nth-of-type(3) aside:last-of-type,
+  #planets section:first-of-type div:nth-of-type(3) aside:last-of-type,
+  #species section:first-of-type div:nth-of-type(3) aside:last-of-type,
+  #starships section:first-of-type div:nth-of-type(3) aside:last-of-type,
+  #vehicles section:first-of-type div:nth-of-type(3) aside:last-of-type {
     border-right: 0;
   }
   #characters section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
@@ -381,12 +512,45 @@ footer .fa:hover {
   #species section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
   #starships section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
   #vehicles section:first-of-type div:nth-of-type(2) aside:nth-of-type(3),
+  #characters section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+  #films section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+  #planets section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+  #species section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+  #starships section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
+  #vehicles section:first-of-type div:nth-of-type(3) aside:nth-of-type(3),
   #characters section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
   #films section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
   #planets section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
   #species section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
   #starships section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
-  #vehicles section:first-of-type div:nth-of-type(2) aside:nth-of-type(4) {
+  #vehicles section:first-of-type div:nth-of-type(2) aside:nth-of-type(4),
+  #characters section:first-of-type div:nth-of-type(3) aside:nth-of-type(4),
+  #films section:first-of-type div:nth-of-type(3) aside:nth-of-type(4),
+  #planets section:first-of-type div:nth-of-type(3) aside:nth-of-type(4),
+  #species section:first-of-type div:nth-of-type(3) aside:nth-of-type(4),
+  #starships section:first-of-type div:nth-of-type(3) aside:nth-of-type(4),
+  #vehicles section:first-of-type div:nth-of-type(3) aside:nth-of-type(4) {
+    border-bottom: 0;
+  }
+  #starships section:first-of-type div:nth-of-type(4) aside,
+  #vehicles section:first-of-type div:nth-of-type(4) aside {
+    padding: 1em;
+    border: 0;
+    border-right: 0.3px solid #416D8B;
+  }
+  #starships section:first-of-type div:nth-of-type(4) aside p,
+  #vehicles section:first-of-type div:nth-of-type(4) aside p {
+    text-align: center;
+    margin-top: .5em;
+  }
+  #starships section:first-of-type div:nth-of-type(4) aside:last-of-type,
+  #vehicles section:first-of-type div:nth-of-type(4) aside:last-of-type {
+    border-right: 0;
+  }
+  #starships section:first-of-type div:nth-of-type(4) aside:nth-of-type(3),
+  #vehicles section:first-of-type div:nth-of-type(4) aside:nth-of-type(3),
+  #starships section:first-of-type div:nth-of-type(4) aside:nth-of-type(4),
+  #vehicles section:first-of-type div:nth-of-type(4) aside:nth-of-type(4) {
     border-bottom: 0;
   }
 }
