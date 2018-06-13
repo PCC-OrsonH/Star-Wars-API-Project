@@ -93,6 +93,14 @@ section.movies-section div div,
 section.characters-section div div {
   min-height: 400px;
 }
+section.index_page div div {
+  min-height: 200px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 45%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
 section.movies-section div.row,
 section.characters-section div.row {
   padding-left: 2em;
@@ -460,6 +468,11 @@ footer .fa:hover {
     margin-left: 2.5%;
     margin-bottom: 2em;
     width: 30%;
+  }
+  section.index_page div div {
+    width: 30% !important;
+    margin-left: 1%;
+    margin-right: 1%;
   }
   #characters section:first-of-type > div,
   #films section:first-of-type > div,
