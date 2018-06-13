@@ -36,17 +36,29 @@ header {
 			margin: 2em auto;
 			width: 50%;
 		}
+	}
+	
+	.search {
+		display: block;
+		margin-top: 6em;
+		padding: 2em;
+		text-align: center;
+	}
+	
+	.well {
+		border-radius: 0;
+		text-align: center;
+		
+	}
+	
+	input, select, button {
+		border: 1px solid @primaryColor;
+		padding: .5em;
+	}
 
-		input, select, button {
-			border: 1px solid @primaryColor;
-			border-radius: 10%%;
-			padding: .5em;
-		}
-
-		button {
-			background-color: @primaryColor;
-			color: @lightColor;
-		}
+	button {
+		background-color: @primaryColor;
+		color: @lightColor;
 	}
 
 }
@@ -81,19 +93,24 @@ header {
 	background-size: cover;
 }
 
-#planets header {
+#starships header {
 	background: url(../images/spaceships.jpg) no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 }
 
-section.movies-section div div {
+#vehicles header{
+	background: url(../images/x-wing.jpg) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+section.movies-section div div, section.characters-section div div {
 	min-height: 400px;
-	margin-left: 2.5%;
-	width: 45%;
+	// margin-left: 2.5%;
+	// width: 45%;
 }
 
-section.movies-section div.row {
+section.movies-section div.row, section.characters-section div.row {
 	padding-left: 2em;
 }
 
@@ -120,55 +137,8 @@ section.characters ul {
 	}
 }
 
-.episode1 {
-	background: url(../images/phantom-menace.jpg) no-repeat;
-	background-size: contain;
-}
+@import 'mixins.less';
 
-.episode2 {
-	background: url(../images/attack-of-the-clones.jpg) no-repeat;
-	background-size: contain;
-}
-
-.episode3 {
-	background: url(../images/revenge-of-the-sith.jpg) no-repeat;
-	background-size: contain;
-}
-
-.episode4 {
-	background: url(../images/a-new-hope.jpg) no-repeat;
-	background-size: contain;
-}
-
-.episode5 {
-	background: url(../images/empire-strikes-back.jpg) no-repeat;
-	background-size: contain;
-}
-
-.episode6 {
-	background: url(../images/return-of-the-jedi.jpg) no-repeat;
-	background-size: contain;
-}
-
-.episode7 {
-	background: url(../images/force-awakens-poster.jpg) no-repeat;
-	background-size: contain;
-}
-
-.episode8 {
-	background: url(../images/last-jedi.jpg) no-repeat;
-	background-size: contain;
-}
-
-.episode9 {
-	background: url(../images/rogue8_final_screen.jpg) no-repeat;
-	background-size: contain;
-}
-
-.episode10 {
-	background: url(../images/solonewposter.jpg) no-repeat;
-	background-size: contain;
-}
 
 #characters, #films, #planets, #species, #starships, #vehicles {
 
@@ -184,14 +154,26 @@ section.characters ul {
 		p {
 			margin-bottom: 2em;
 		}
-
-		div:nth-of-type(2) {
-
+		div {
+			text-align: center;
+			h3{
+				text-align: center;
+				font-size: 100%;
+			}
+			aside {
+				height: 125px;
+				p {
+					margin-top: .5em;
+				}
+			} 
+		}
+		div:nth-of-type(2), div:nth-of-type(3) {
 			margin-top: 2em;
 
 			aside {
 				border-top: .3px solid @primaryColor;
 				padding: 1em;
+				
 
 				&:nth-of-type(1), &:nth-of-type(3) {
 					border-right: .3px solid @primaryColor;
@@ -207,6 +189,39 @@ section.characters ul {
 
 	}
 
+}
+#starships, #vehicles {
+	section:first-of-type {
+		div {
+			h3{
+				text-align: center;
+				font-size: 75%;
+			}
+			aside {
+				height: 150px;
+			}
+		}
+		div:nth-of-type(4) {
+			margin-top: 2em;
+
+			aside {
+				border-top: .3px solid @primaryColor;
+				padding: 1em;
+				
+
+				&:nth-of-type(1), &:nth-of-type(3) {
+					border-right: .3px solid @primaryColor;
+				}
+
+				&:nth-of-type(3), &:nth-of-type(4) {
+					border-bottom: .3px solid @primaryColor;
+				}
+
+			}
+
+		}
+
+	}
 }
 
 
@@ -256,7 +271,11 @@ footer {
 	} // .fa
 
 }
-
+#movies {
+	img{
+		max-width: 100%;
+	}
+}
 @media screen and (min-width:600px) {
 
 	header {
@@ -271,7 +290,7 @@ footer {
 
 	}
 
-	section.movies-section div div {
+	section.movies-section div div, section.characters-section div div {
 		min-height: 400px;
 		margin-left: 2.5%;
 		margin-bottom: 2em;
@@ -301,7 +320,7 @@ footer {
 
 		.header-text {
 
-			transform: translateY(60%);
+			transform: translateY(50%);
 
 			img {
 				width: 35%;
@@ -310,8 +329,14 @@ footer {
 		}
 
 	}
-
-	section.movies-section div div {
+	#desc{
+		padding-left: 0;
+		margin-left: 0;
+		border-left: 0;
+		width: 60%;
+		font-size: 125%;
+	}
+	section.movies-section div div, section.characters-section div div {
 		min-height: 400px;
 		margin-left: 2.5%;
 		margin-bottom: 2em;
@@ -327,11 +352,14 @@ footer {
 
 			padding: 4em;
 
-			div:nth-of-type(2) aside {
+			div:nth-of-type(2) aside, div:nth-of-type(3) aside {
 				border: 0;
 				border-right: .3px solid @primaryColor;
 				padding: 1em;
-
+				p{
+					text-align: center;
+					margin-top: .5em;
+				}
 				&:last-of-type {
 					border-right: 0;
 				}
@@ -344,6 +372,26 @@ footer {
 
 		}
 
+	}
+	#starships, #vehicles {
+		section:first-of-type {
+			div:nth-of-type(4) aside {
+				padding: 1em;
+				border: 0;
+				border-right: .3px solid @primaryColor;
+				p { 
+					text-align: center;
+					margin-top: .5em; 
+				}
+				&:last-of-type {
+					border-right: 0;
+				}
+
+				&:nth-of-type(3), &:nth-of-type(4) {
+					border-bottom: 0;
+				}
+			}
+		}
 	}
 
 }

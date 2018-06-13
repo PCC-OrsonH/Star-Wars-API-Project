@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Starwars API Demo</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,900">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1 id="title">Starwars API Demo</h1>
+        
+        <h2>Select from the following characters:</h2>
+        <form action="index.html" method="get">
+              <select name="number">
+                    <option id="1">Luke Skywalker</option>
+                    <option id="2">C3PO</option>
+                    <option id="3">R2-D2</option>
+                    <option id="4">Darth Vader</option>
+                    <option id="5">Leia Organa</option>
+                    <option id="6">Owen Lars</option>
+                    <option id="7">Beru Whitesun Lars</option>
+                    <option id="8">R5-D4</option>
+                    <option id="9">Biggs Darklighter</option>
+                    <option id="10">Obi-Wan Kenobi</option>
+                    <option id="11">Anakin Skywalker</option>
+                    <option id="12">Wilhuff Tarkin</option>
+                    <option id="13">Chewbacca</option>
+                    <option id="14">Han Solo</option>
+                    <option id="15">Greedo</option>
+              </select>
+              <button type="button" id='button' name="button">Select Character</button>
+        </form>
+                
+        <div class="info-container">
+            <h2 id="name"></h2>
+            <p id="height"></p>
+            <p id="mass"></p>
+            <p id="hair_color"></p>
+            <p id="skin_color"></p>
+            <p id="eye_color"></p>
+            <p id="birth_year"></p>
+            <p id="gender"></p>
+           
+        </div>
+        
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        
+        <script src="people.js"></script>
+        
+    </body>
+
+</html>

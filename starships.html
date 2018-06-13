@@ -30,46 +30,38 @@
 
 </head>
 
-<body id="planets">
+<body id="starships" onload="getInfo()">
 
     <header>
         <div class="header-text">
             <img src="images/logo.png">
+        </div>
+        <div class="search">
+            <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
+            <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
+            <select>
+                <option value="planets">Planets</option>
+                <option value="films">Films</option>
+                <option value="people">Characters</option>
+                <option value="starships">Spaceships</option>
+                <option value="vehicles">Vehicles</option>
+                <option value="species">Species</option>
+            </select>
+            <button type="submit" onclick="getSearch();">Search</button>
 
-            <div>
-                <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
-                <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
-                <select>
-						<option value="planets">Planets</option>
-						<option value="films">Films</option>
-						<option value="people">Characters</option>
-						<option value="starships">Spaceships</option>
-						<option value="vehicles">Vehicles</option>
-						<option value="species">Species</option>
-					</select>
-                <button type="submit" onclick="getSearch();">Search</button>
-
-            </div>
-            <div class="well" style="display: none;">
-                <h3 id="errorMess" display="none"></h3>
-                <ul id="suggList" display="none"></ul>
-            </div>
+        </div>
+        <div class="well" style="display: none;">
+            <h3 id="errorMess" display="none"></h3>
+            <ul id="suggList" display="none"></ul>
         </div>
     </header>
 
     <main>
 
         <section class="row">
-
-            <img class="col-xs-12 col-sm-6 col-md-4" src="images/x-wing.jpg">
-
             <div class="col-xs-12 col-sm-6 col-md-8">
 
-                <h2>X-Wing</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor orci ut magna vehicula, quis scelerisque leo tincidunt. Phasellus fringilla condimentum enim non convallis. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-
-
+                <h2 id="name">X-Wing</h2>
 
             </div>
 
@@ -77,19 +69,61 @@
 
                 <aside class="col-xs-6 col-sm-6 col-md-3">
                     <h3>Model</h3>
-                    <p>Lorem Ipsum</p>
+                    <p id="model">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Manufacturer</h3>
+                    <p id="manufacturer">lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Cost In Credits</h3>
+                    <p id="cost_in_credits">Lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
                     <h3>Length</h3>
-                    <p>lorem Ipsum</p>
+                    <p id="length">Lorem Ipsum</p>
+                </aside>
+
+            </div>
+
+            <div class="row col-xs-12 col-sm-12 col-md-12">
+
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Max Atmosphering Speed</h3>
+                    <p id="max_atmosphering_speed">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Crew</h3>
+                    <p id="crew">lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
                     <h3>Passengers</h3>
-                    <p>Lorem Ipsum</p>
+                    <p id="passengers">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Cargo Capacity</h3>
+                    <p id="cargo_capacity">Lorem Ipsum</p>
+                </aside>
+
+            </div>
+
+            <div class="row col-xs-12 col-sm-12 col-md-12">
+
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Consumables</h3>
+                    <p id="consumables">Lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
                     <h3>Hyperdrive Rating</h3>
-                    <p>Lorem Ipsum</p>
+                    <p id="hyperdrive_rating">lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>MGLT</h3>
+                    <p id="mglt">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Starship Class</h3>
+                    <p id="starship_class">Lorem Ipsum</p>
                 </aside>
 
             </div>
@@ -99,18 +133,7 @@
         <section class="movies-section">
             <h2>Movies</h2>
 
-            <div class="row">
-
-                <div class="col-xs-6 col-sm-6 col-md-4 episode1"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode2"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode3"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode4"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode5"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode6"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode7"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode8"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode9"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode10"></div>
+            <div class="row" id="movies">
 
             </div>
         </section>

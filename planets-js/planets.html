@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Starwars API Demo</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,900">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1 id="title">Starwars API Demo</h1>
+        
+        <h2>Select from the following planets:</h2>
+        <form action="index.html" method="get">
+              <select name="number">
+					<option id="1">Tatooine</option>
+                    <option id="2">Alderaan</option>
+                    <option id="3">Yavin IV</option>
+                    <option id="4">Hoth</option>
+                    <option id="5">Dagobah</option>
+                    <option id="6">Bespin</option>
+                    <option id="7">Endor</option>
+                    <option id="8">Naboo</option>
+                    <option id="9">Coruscant</option>
+                    <option id="10">Kamino</option>
+                    <option id="11">Geonosis</option>
+             </select>
+              <button type="button" id='button' name="button">Select Character</button>
+        </form>
+                
+        <div class="info-container">
+            <h2 id="name"></h2>
+            <p id="rotation_period"></p>
+            <p id="orbital_period"></p>
+            <p id="diameter"></p>
+            <p id="climate"></p>
+            <p id="gravity"></p>
+            <p id="terrain"></p>
+            <p id="surface_water"></p>
+			<p id="population"></p>           
+        </div>
+        
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        
+        <script src="planets.js"></script>
+        
+    </body>
+
+</html>

@@ -21,7 +21,8 @@ function updateInfo(data) {
     let director = document.getElementById("director");
     let producer = document.querySelector('#producer');
     let release_date = document.querySelector('#release_date');
-    let episode_id = document.querySelector("#episodeId");
+    let episode_id = document.querySelector("#episode_id");
+    let image = document.getElementById("poster");
 
     /* Setting HTML for Main Section */
     title.innerText = `${data.title}`;
@@ -30,6 +31,28 @@ function updateInfo(data) {
     producer.innerText = `${data.producer}`;
     episode_id.innerText = `${data.episode_id}`;
     release_date.innerText = `${data.release_date}`;
+    switch(data.episode_id){
+        case 1:
+        image.setAttribute("src", "images/phantom-menace.jpg");
+        break;
+        case 2:
+        image.setAttribute("src", "images/attack-of-the-clones.jpg");
+        break;
+        case 3:
+        image.setAttribute("src", "images/revenge-of-the-sith.jpg");
+        break;
+        case 4:
+        image.setAttribute("src", "images/a-new-hope.jpg");
+        break;
+        case 5:
+        image.setAttribute("src", "images/empire-strikes-back.jpg");
+        break; 
+        case 6:
+        image.setAttribute("src", "images/return-of-the-jedi.jpg");
+        break;
+        case 7:
+        image.setAttribute("src", "images/force-awakens-poster.jpg");
+    }
     for (let x = 0; x < data.characters.length; x++) {
         foundCharacter(data.characters[x]);
     }

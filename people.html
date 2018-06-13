@@ -30,88 +30,77 @@
 
 </head>
 
-<body id="characters">
+<body id="characters" onload="getInfo()">
 
     <header>
         <div class="header-text">
             <img src="images/logo.png">
-
-            <div>
-                <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
-                <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
-                <select>
-						<option value="planets">Planets</option>
-						<option value="films">Films</option>
-						<option value="people">Characters</option>
-						<option value="starships">Spaceships</option>
-						<option value="vehicles">Vehicles</option>
-						<option value="species">Species</option>
-					</select>
-                <button type="submit" onclick="getSearch();">Search</button>
-
-            </div>
-            <div class="well" style="display: none;">
-                <h3 id="errorMess" display="none"></h3>
-                <ul id="suggList" display="none"></ul>
-            </div>
+        </div>
+        <div class="search">
+            <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
+            <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
+            <select>
+                <option value="planets">Planets</option>
+                <option value="films">Films</option>
+                <option value="people">Characters</option>
+                <option value="starships">Spaceships</option>
+                <option value="vehicles">Vehicles</option>
+                <option value="species">Species</option>
+            </select>
+            <button type="submit" onclick="getSearch();">Search</button>
 
         </div>
-
-
+        <div class="well" style="display: none;">
+            <h3 id="errorMess" display="none"></h3>
+            <ul id="suggList" display="none"></ul>
+        </div>
     </header>
-
     <main>
-
         <section class="row">
-
-            <img class="col-xs-12 col-sm-6 col-md-4" src="images/luke.jpg">
-
             <div class="col-xs-12 col-sm-6 col-md-8">
-
-                <h2>Luke Skywalker</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor orci ut magna vehicula, quis scelerisque leo tincidunt. Phasellus fringilla condimentum enim non convallis. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-
-
-
+                <h2 id="name">Luke Skywalker</h2>
+                <p> </p>
             </div>
-
             <div class="row col-xs-12 col-sm-12 col-md-12">
-
                 <aside class="col-xs-6 col-sm-6 col-md-3">
                     <h3>Height</h3>
-                    <p>Lorem Ipsum</p>
+                    <p id="height">Lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Birth Year</h3>
-                    <p>lorem Ipsum</p>
-                </aside>
-                <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Eye Color</h3>
-                    <p>Lorem Ipsum</p>
+                    <h3>Mass</h3>
+                    <p id="mass">lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
                     <h3>Hair Color</h3>
-                    <p>Lorem Ipsum</p>
+                    <p id="hair_color">Lorem Ipsum</p>
                 </aside>
-
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Skin Color</h3>
+                    <p id="skin_color">Lorem Ipsum</p>
+                </aside>
             </div>
+            <div class="row col-xs-12 col-sm-12 col-md-12">
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Eye Color</h3>
+                    <p id="eye_color">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Birth Year</h3>
+                    <p id="birth_year">lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Gender</h3>
+                    <p id="gender">Lorem Ipsum</p>
+                </aside>
+            </div>
+
 
         </section>
 
         <section>
             <h2>Movies</h2>
 
-            <div class="row">
-
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-                <img src="images/rogue8_final_screen.jpg" class="col-xs-6 col-sm-6 col-md-4">
-
-
+            <div class="row" id="movies">
             </div>
         </section>
     </main>

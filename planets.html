@@ -30,87 +30,91 @@
 
 </head>
 
-<body id="planets">
+<body id="planets" onload="getInfo()">
 
     <header>
         <div class="header-text">
             <img src="images/logo.png">
+        </div>
+        <div class="search">
+            <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
+            <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
+            <select>
+                <option value="planets">Planets</option>
+                <option value="films">Films</option>
+                <option value="people">Characters</option>
+                <option value="starships">Spaceships</option>
+                <option value="vehicles">Vehicles</option>
+                <option value="species">Species</option>
+            </select>
+            <button type="submit" onclick="getSearch();">Search</button>
 
-            <div>
-                <input id="search" type="text" placeholder="Search here.." onclick="clearing();">
-                <!--					Planets, Spaceships, Vehicles, People, Films and Species -->
-                <select>
-						<option value="planets">Planets</option>
-						<option value="films">Films</option>
-						<option value="people">Characters</option>
-						<option value="starships">Spaceships</option>
-						<option value="vehicles">Vehicles</option>
-						<option value="species">Species</option>
-					</select>
-                <button type="submit" onclick="getSearch();">Search</button>
-
-            </div>
-            <div class="well" style="display: none;">
-                <h3 id="errorMess" display="none"></h3>
-                <ul id="suggList" display="none"></ul>
-            </div>
+        </div>
+        <div class="well" style="display: none;">
+            <h3 id="errorMess" display="none"></h3>
+            <ul id="suggList" display="none"></ul>
         </div>
     </header>
-
     <main>
 
         <section class="row">
 
-            <img class="col-xs-12 col-sm-6 col-md-4" src="images/tatooine.jpg">
-
             <div class="col-xs-12 col-sm-6 col-md-8">
+                <h2 id="name">Planet Name</h2>
+            </div>
 
-                <h2>Tatooine</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor orci ut magna vehicula, quis scelerisque leo tincidunt. Phasellus fringilla condimentum enim non convallis. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-
-
+            <div class="row col-xs-12 col-sm-12 col-md-12">
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Rotation Period</h3>
+                    <p id="rotation_period">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Orbital Period</h3>
+                    <p id="orbital_period">lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Diameter</h3>
+                    <p id="diameter">Lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Climate</h3>
+                    <p id="climate">Lorem Ipsum</p>
+                </aside>
 
             </div>
 
             <div class="row col-xs-12 col-sm-12 col-md-12">
 
                 <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Terrain</h3>
-                    <p>Lorem Ipsum</p>
+                    <h3>Gravity</h3>
+                    <p id="gravity">Lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Climate</h3>
-                    <p>lorem Ipsum</p>
+                    <h3>Terrain</h3>
+                    <p id="terrain">lorem Ipsum</p>
+                </aside>
+                <aside class="col-xs-6 col-sm-6 col-md-3">
+                    <h3>Surface Water (%)</h3>
+                    <p id="surface_water">Lorem Ipsum</p>
                 </aside>
                 <aside class="col-xs-6 col-sm-6 col-md-3">
                     <h3>Population</h3>
-                    <p>Lorem Ipsum</p>
-                </aside>
-                <aside class="col-xs-6 col-sm-6 col-md-3">
-                    <h3>Diameter</h3>
-                    <p>Lorem Ipsum</p>
+                    <p id="population">Lorem Ipsum</p>
                 </aside>
 
             </div>
 
         </section>
+        <section class="characters">
+            <h2>Characters</h2>
 
+            <ul id="characters">
+            </ul>
+        </section>
         <section class="movies-section">
             <h2>Movies</h2>
 
-            <div class="row">
-
-                <div class="col-xs-6 col-sm-6 col-md-4 episode1"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode2"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode3"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode4"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode5"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode6"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode7"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode8"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode9"></div>
-                <div class="col-xs-6 col-sm-6 col-md-4 episode10"></div>
+            <div class="row" id="movies">
 
             </div>
         </section>
